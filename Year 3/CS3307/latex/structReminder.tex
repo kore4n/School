@@ -1,0 +1,104 @@
+\hypertarget{structReminder}{}\doxysection{Reminder Class Reference}
+\label{structReminder}\index{Reminder@{Reminder}}
+
+
+A class for managing reminders.  
+
+
+
+
+{\ttfamily \#include $<$Reminder.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structReminder_a28b92a7b204aca09c1afabaec6e704ac}{Reminder}} ()
+\item 
+\mbox{\hyperlink{structReminder_a128f75d0d678e8e364e91cd2b6e632ed}{$\sim$\+Reminder}} ()
+\item 
+void \mbox{\hyperlink{structReminder_a1562b501b229503a9bb36baac0948983}{add\+Reminder}} ()
+\item 
+void \mbox{\hyperlink{structReminder_a7c63ce94a4cf82f69dbe6cd05fb0f313}{write\+Reminders\+To\+File}} (std\+::string filename)
+\begin{DoxyCompactList}\small\item\em Write reminders to a file This function writes all the reminders to a file with the given filename. The function appends to the file if it already exists, and creates a new file if it doesn\textquotesingle{}t. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{structReminder_aa669a6cafab0a3e625e681d19c2dd319}{view\+Reminder}} ()
+\item 
+void \mbox{\hyperlink{structReminder_aca27b35543d934c99a57eb5bace2b30b}{remove\+Reminder}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structReminder_a019d6385cd6387ba62d4b235766540c4}\label{structReminder_a019d6385cd6387ba62d4b235766540c4}} 
+std\+::string {\bfseries message}
+\item 
+\mbox{\Hypertarget{structReminder_a1e2e8a469a7afbd75715556d742a380a}\label{structReminder_a1e2e8a469a7afbd75715556d742a380a}} 
+int {\bfseries hour}
+\item 
+\mbox{\Hypertarget{structReminder_ad3a787ba12490d3bb797f4239cc033d4}\label{structReminder_ad3a787ba12490d3bb797f4239cc033d4}} 
+int {\bfseries minute}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class for managing reminders. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structReminder_a28b92a7b204aca09c1afabaec6e704ac}\label{structReminder_a28b92a7b204aca09c1afabaec6e704ac}} 
+\index{Reminder@{Reminder}!Reminder@{Reminder}}
+\index{Reminder@{Reminder}!Reminder@{Reminder}}
+\doxysubsubsection{\texorpdfstring{Reminder()}{Reminder()}}
+{\footnotesize\ttfamily Reminder\+::\+Reminder (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+The constructor for the \mbox{\hyperlink{structReminder}{Reminder}} class \mbox{\Hypertarget{structReminder_a128f75d0d678e8e364e91cd2b6e632ed}\label{structReminder_a128f75d0d678e8e364e91cd2b6e632ed}} 
+\index{Reminder@{Reminder}!````~Reminder@{$\sim$Reminder}}
+\index{````~Reminder@{$\sim$Reminder}!Reminder@{Reminder}}
+\doxysubsubsection{\texorpdfstring{$\sim$Reminder()}{~Reminder()}}
+{\footnotesize\ttfamily Reminder\+::$\sim$\+Reminder (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+The deconstructor for the \mbox{\hyperlink{structReminder}{Reminder}} class 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structReminder_a1562b501b229503a9bb36baac0948983}\label{structReminder_a1562b501b229503a9bb36baac0948983}} 
+\index{Reminder@{Reminder}!addReminder@{addReminder}}
+\index{addReminder@{addReminder}!Reminder@{Reminder}}
+\doxysubsubsection{\texorpdfstring{addReminder()}{addReminder()}}
+{\footnotesize\ttfamily void Reminder\+::add\+Reminder (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This function prompts the user to enter a date, time, and message for the new reminder. The reminder is added to the appropriate date in the reminders map and written to the reminders.\+txt file. The reminder.\+sh shell script is executed to update the system\textquotesingle{}s cron job scheduler. \mbox{\Hypertarget{structReminder_aca27b35543d934c99a57eb5bace2b30b}\label{structReminder_aca27b35543d934c99a57eb5bace2b30b}} 
+\index{Reminder@{Reminder}!removeReminder@{removeReminder}}
+\index{removeReminder@{removeReminder}!Reminder@{Reminder}}
+\doxysubsubsection{\texorpdfstring{removeReminder()}{removeReminder()}}
+{\footnotesize\ttfamily void Reminder\+::remove\+Reminder (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This function removes a reminder from the cron job list using by allowing the user to select the index of the reminder to remove \mbox{\Hypertarget{structReminder_aa669a6cafab0a3e625e681d19c2dd319}\label{structReminder_aa669a6cafab0a3e625e681d19c2dd319}} 
+\index{Reminder@{Reminder}!viewReminder@{viewReminder}}
+\index{viewReminder@{viewReminder}!Reminder@{Reminder}}
+\doxysubsubsection{\texorpdfstring{viewReminder()}{viewReminder()}}
+{\footnotesize\ttfamily void Reminder\+::view\+Reminder (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This function reads the reminders from the reminders.\+txt file and displays them on the console \begin{DoxyReturn}{Returns}
+all the reminder for the user to view 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structReminder_a7c63ce94a4cf82f69dbe6cd05fb0f313}\label{structReminder_a7c63ce94a4cf82f69dbe6cd05fb0f313}} 
+\index{Reminder@{Reminder}!writeRemindersToFile@{writeRemindersToFile}}
+\index{writeRemindersToFile@{writeRemindersToFile}!Reminder@{Reminder}}
+\doxysubsubsection{\texorpdfstring{writeRemindersToFile()}{writeRemindersToFile()}}
+{\footnotesize\ttfamily void Reminder\+::write\+Reminders\+To\+File (\begin{DoxyParamCaption}\item[{std\+::string}]{filename }\end{DoxyParamCaption})}
+
+
+
+Write reminders to a file This function writes all the reminders to a file with the given filename. The function appends to the file if it already exists, and creates a new file if it doesn\textquotesingle{}t. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The name of the file to write reminders to \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+reminder.\+h\item 
+reminder.\+cpp\end{DoxyCompactItemize}

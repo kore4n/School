@@ -1,0 +1,69 @@
+\hypertarget{structwhisper__params}{}\doxysection{whisper\+\_\+params Struct Reference}
+\label{structwhisper__params}\index{whisper\_params@{whisper\_params}}
+
+
+struct containing all command-\/line parameters  
+
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structwhisper__params_aedeaf59ce44b198be6112378a1bca8a0}\label{structwhisper__params_aedeaf59ce44b198be6112378a1bca8a0}} 
+int32\+\_\+t {\bfseries n\+\_\+threads} = std\+::min(4, (int32\+\_\+t) std\+::thread\+::hardware\+\_\+concurrency())
+\item 
+\mbox{\Hypertarget{structwhisper__params_a9dac15f28433a3a13385852d0da4041a}\label{structwhisper__params_a9dac15f28433a3a13385852d0da4041a}} 
+int32\+\_\+t {\bfseries step\+\_\+ms} = 3000
+\item 
+\mbox{\Hypertarget{structwhisper__params_a6b71ee2ffd62ce5940d805603e2eb736}\label{structwhisper__params_a6b71ee2ffd62ce5940d805603e2eb736}} 
+int32\+\_\+t {\bfseries length\+\_\+ms} = 10000
+\item 
+\mbox{\Hypertarget{structwhisper__params_a518664c9ce33a3930648083efe7c54f9}\label{structwhisper__params_a518664c9ce33a3930648083efe7c54f9}} 
+int32\+\_\+t {\bfseries keep\+\_\+ms} = 200
+\item 
+\mbox{\Hypertarget{structwhisper__params_a8acade628a9b23ab41abe9e2b0f3258b}\label{structwhisper__params_a8acade628a9b23ab41abe9e2b0f3258b}} 
+int32\+\_\+t {\bfseries capture\+\_\+id} = -\/1
+\item 
+\mbox{\Hypertarget{structwhisper__params_a359a5043d288269b58596032edcb5c0a}\label{structwhisper__params_a359a5043d288269b58596032edcb5c0a}} 
+int32\+\_\+t {\bfseries max\+\_\+tokens} = 32
+\item 
+\mbox{\Hypertarget{structwhisper__params_a1b245dc422c8fcf32f53b4c247dba252}\label{structwhisper__params_a1b245dc422c8fcf32f53b4c247dba252}} 
+int32\+\_\+t {\bfseries audio\+\_\+ctx} = 0
+\item 
+\mbox{\Hypertarget{structwhisper__params_a91e41defb952aae6eee39fcd26f78b3a}\label{structwhisper__params_a91e41defb952aae6eee39fcd26f78b3a}} 
+float {\bfseries vad\+\_\+thold} = 0.\+6f
+\item 
+\mbox{\Hypertarget{structwhisper__params_a49c7bfbc2c202ce7ff2bd7be1326c688}\label{structwhisper__params_a49c7bfbc2c202ce7ff2bd7be1326c688}} 
+float {\bfseries freq\+\_\+thold} = 100.\+0f
+\item 
+\mbox{\Hypertarget{structwhisper__params_a8912300eb16537a7c5102eb56f3cc991}\label{structwhisper__params_a8912300eb16537a7c5102eb56f3cc991}} 
+bool {\bfseries speed\+\_\+up} = false
+\item 
+\mbox{\Hypertarget{structwhisper__params_a90cd3946fdf78dfa61a55d741553c899}\label{structwhisper__params_a90cd3946fdf78dfa61a55d741553c899}} 
+bool {\bfseries translate} = false
+\item 
+\mbox{\Hypertarget{structwhisper__params_ad93891fe8827b7878cac6199aeb66340}\label{structwhisper__params_ad93891fe8827b7878cac6199aeb66340}} 
+bool {\bfseries print\+\_\+special} = false
+\item 
+\mbox{\Hypertarget{structwhisper__params_a565aaf22f8d2393e9c2de73a9ef793a9}\label{structwhisper__params_a565aaf22f8d2393e9c2de73a9ef793a9}} 
+bool {\bfseries no\+\_\+context} = true
+\item 
+\mbox{\Hypertarget{structwhisper__params_aeb93bcb61479eb2217275fee9ba1da50}\label{structwhisper__params_aeb93bcb61479eb2217275fee9ba1da50}} 
+bool {\bfseries no\+\_\+timestamps} = false
+\item 
+\mbox{\Hypertarget{structwhisper__params_a6acde16142d361545efbfa98aaf92dcf}\label{structwhisper__params_a6acde16142d361545efbfa98aaf92dcf}} 
+std\+::string {\bfseries language} = \char`\"{}en\char`\"{}
+\item 
+\mbox{\Hypertarget{structwhisper__params_ab78acdbf2d6d881a93d33a036fd3ba49}\label{structwhisper__params_ab78acdbf2d6d881a93d33a036fd3ba49}} 
+std\+::string {\bfseries model} = \char`\"{}models/ggml-\/base.\+en.\+bin\char`\"{}
+\item 
+\mbox{\Hypertarget{structwhisper__params_a51e0b30331c28fa2e890d5f54a1c037b}\label{structwhisper__params_a51e0b30331c28fa2e890d5f54a1c037b}} 
+std\+::string {\bfseries fname\+\_\+out}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+struct containing all command-\/line parameters 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+main\+Stream.\+cpp\end{DoxyCompactItemize}

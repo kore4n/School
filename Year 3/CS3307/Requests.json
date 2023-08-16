@@ -1,0 +1,67 @@
+{
+  "function": [
+    {
+      "name": "Weather",
+      "fields": {
+        "lat": "43.8202",
+        "lon": "-79.2709",
+        "apikey": "e28d6ef98cb405b2ebd0e23193822aa5"
+      },
+      "url": "https://api.openweathermap.org/data/3.0/onecall?units=metric&appid={}&lat={}&lon={}"
+    },
+    {
+      "name": "Timemachine Weather",
+      "fields": {
+        "lat": "43.8202",
+        "lon": "-79.2709",
+        "apikey": "e28d6ef98cb405b2ebd0e23193822aa5"
+      },
+      "url": "https://api.openweathermap.org/data/3.0/onecall/timemachine?units=metric&appid={}&lat={}&lon={}&dt={}"
+    },
+    {
+      "name": "News",
+      "fields": {
+        "apikey": "YJFsCyZ8wiUu1AaZwFzaQTb1krFtEfQNuAu7y57O"
+      },
+      "url": "https://api.thenewsapi.com/v1/news/top?api_token={}&locale=us&limit=3"
+    },
+    {
+      "name": "News Topic",
+      "fields": {
+        "apikey": "YJFsCyZ8wiUu1AaZwFzaQTb1krFtEfQNuAu7y57O"
+      },
+      "url": "https://api.thenewsapi.com/v1/news/top?api_token={}&categories={}&locale=us&limit=3"
+    },
+    {
+      "name": "News Day",
+      "fields": {
+        "apikey": "YJFsCyZ8wiUu1AaZwFzaQTb1krFtEfQNuAu7y57O"
+      },
+      "url": "https://api.thenewsapi.com/v1/news/top?api_token={}&published_on={}&locale=us&limit=3"
+    },
+    {
+      "name": "Map Distance",
+      "fields": {
+        "apikey": "AIzaSyCoBaCQeoa8CZDLnhc8QMLxqTED699Ye9A"
+      },
+      "url": "https://maps.googleapis.com/maps/api/directions/json?key={}&origin={}&destination={}"
+    }
+  ],
+  "chatGPT": {
+    "apikey": "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",
+    "url": "https://api.openai.com/v1/chat/completions"
+  },
+  "elevenLabs": 
+    {
+      "apikey":"4ed76c8b7fd28840a44e20c4f31882b1",
+      "voice_id":"cloned/Drew",
+      "url":"https://api.elevenlabs.io/doc/v1/text-to-speech/{voice_id}",
+      "body":{
+        "text":"string",
+        "voice_settings": {
+          "stability": 0,
+          "similarity_boost": 0
+        }
+      }
+    }
+}

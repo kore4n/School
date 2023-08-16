@@ -1,0 +1,4 @@
+
+29 20 3 4 * echo "Reminder: this is a test" >> /home/victor/CLionProjects/group2/output.txt
+30 20 3 4 * echo "Reminder: this is a test" >> /home/victor/CLionProjects/group2/output.txt
+35 20 3 4 * echo "Reminder: I hate this" >> /home/victor/CLionProjects/group2/output.txt

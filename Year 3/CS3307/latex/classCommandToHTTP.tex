@@ -1,0 +1,121 @@
+\hypertarget{classCommandToHTTP}{}\doxysection{Command\+To\+HTTP Class Reference}
+\label{classCommandToHTTP}\index{CommandToHTTP@{CommandToHTTP}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCommandToHTTP_a805a1a6308101cdb477d6328872c694f}{Command\+To\+HTTP}} (string file\+Path)
+\item 
+\mbox{\hyperlink{classCommandToHTTP_aaa98fea2e4c348fb4c91d7219ea5702b}{$\sim$\+Command\+To\+HTTP}} ()
+\item 
+void \mbox{\hyperlink{classCommandToHTTP_a517ee9c5c231a60b943da2012a3bccad}{add\+Request\+From\+File}} (string file\+Name)
+\item 
+void \mbox{\hyperlink{classCommandToHTTP_a5eb1f05889cadc65903782eef2850fea}{add\+Request}} (string name, string url)
+\item 
+void \mbox{\hyperlink{classCommandToHTTP_a95eb116252dd678396bb59c59cc42631}{delete\+Request}} (string name)
+\item 
+string \mbox{\hyperlink{classCommandToHTTP_a46a2abf48546d33d13b122958742ca18}{get\+Request}} (string name)
+\item 
+string \mbox{\hyperlink{classCommandToHTTP_a59bb265e8885bf2e7ec42f1acdff2c3f}{get\+Request\+With\+Params}} (string name, string parameters\mbox{[}$\,$\mbox{]}, int size)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classCommandToHTTP_ab69e5b3cc277a9e0527c637ef246e0ae}\label{classCommandToHTTP_ab69e5b3cc277a9e0527c637ef246e0ae}} 
+map$<$ string, string $>$ {\bfseries requests}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCommandToHTTP_a805a1a6308101cdb477d6328872c694f}\label{classCommandToHTTP_a805a1a6308101cdb477d6328872c694f}} 
+\index{CommandToHTTP@{CommandToHTTP}!CommandToHTTP@{CommandToHTTP}}
+\index{CommandToHTTP@{CommandToHTTP}!CommandToHTTP@{CommandToHTTP}}
+\doxysubsubsection{\texorpdfstring{CommandToHTTP()}{CommandToHTTP()}}
+{\footnotesize\ttfamily Command\+To\+HTTP\+::\+Command\+To\+HTTP (\begin{DoxyParamCaption}\item[{string}]{file\+Path }\end{DoxyParamCaption})}
+
+The constructor for \mbox{\hyperlink{classCommandToHTTP}{Command\+To\+HTTP}} 
+\begin{DoxyParams}{Parameters}
+{\em file\+Path} & The path to the JSON file storing all the APIs. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCommandToHTTP_aaa98fea2e4c348fb4c91d7219ea5702b}\label{classCommandToHTTP_aaa98fea2e4c348fb4c91d7219ea5702b}} 
+\index{CommandToHTTP@{CommandToHTTP}!````~CommandToHTTP@{$\sim$CommandToHTTP}}
+\index{````~CommandToHTTP@{$\sim$CommandToHTTP}!CommandToHTTP@{CommandToHTTP}}
+\doxysubsubsection{\texorpdfstring{$\sim$CommandToHTTP()}{~CommandToHTTP()}}
+{\footnotesize\ttfamily Command\+To\+HTTP\+::$\sim$\+Command\+To\+HTTP (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Deconstructor for \mbox{\hyperlink{classCommandToHTTP}{Command\+To\+HTTP}} 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classCommandToHTTP_a5eb1f05889cadc65903782eef2850fea}\label{classCommandToHTTP_a5eb1f05889cadc65903782eef2850fea}} 
+\index{CommandToHTTP@{CommandToHTTP}!addRequest@{addRequest}}
+\index{addRequest@{addRequest}!CommandToHTTP@{CommandToHTTP}}
+\doxysubsubsection{\texorpdfstring{addRequest()}{addRequest()}}
+{\footnotesize\ttfamily void Command\+To\+HTTP\+::add\+Request (\begin{DoxyParamCaption}\item[{string}]{name,  }\item[{string}]{url }\end{DoxyParamCaption})}
+
+Adds/\+Changes a key and value in the Map 
+\begin{DoxyParams}{Parameters}
+{\em name} & Label for the API \\
+\hline
+{\em url} & The URL path \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCommandToHTTP_a517ee9c5c231a60b943da2012a3bccad}\label{classCommandToHTTP_a517ee9c5c231a60b943da2012a3bccad}} 
+\index{CommandToHTTP@{CommandToHTTP}!addRequestFromFile@{addRequestFromFile}}
+\index{addRequestFromFile@{addRequestFromFile}!CommandToHTTP@{CommandToHTTP}}
+\doxysubsubsection{\texorpdfstring{addRequestFromFile()}{addRequestFromFile()}}
+{\footnotesize\ttfamily void Command\+To\+HTTP\+::add\+Request\+From\+File (\begin{DoxyParamCaption}\item[{string}]{file\+Path }\end{DoxyParamCaption})}
+
+Reads a JSON file to concatenate URL and API keys together and then storing the information in a Map. 
+\begin{DoxyParams}{Parameters}
+{\em file\+Path} & The path to the JSON file storing all the APIs. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCommandToHTTP_a95eb116252dd678396bb59c59cc42631}\label{classCommandToHTTP_a95eb116252dd678396bb59c59cc42631}} 
+\index{CommandToHTTP@{CommandToHTTP}!deleteRequest@{deleteRequest}}
+\index{deleteRequest@{deleteRequest}!CommandToHTTP@{CommandToHTTP}}
+\doxysubsubsection{\texorpdfstring{deleteRequest()}{deleteRequest()}}
+{\footnotesize\ttfamily void Command\+To\+HTTP\+::delete\+Request (\begin{DoxyParamCaption}\item[{string}]{name }\end{DoxyParamCaption})}
+
+Deletes a key an pair in the map 
+\begin{DoxyParams}{Parameters}
+{\em name} & Label for the API \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCommandToHTTP_a46a2abf48546d33d13b122958742ca18}\label{classCommandToHTTP_a46a2abf48546d33d13b122958742ca18}} 
+\index{CommandToHTTP@{CommandToHTTP}!getRequest@{getRequest}}
+\index{getRequest@{getRequest}!CommandToHTTP@{CommandToHTTP}}
+\doxysubsubsection{\texorpdfstring{getRequest()}{getRequest()}}
+{\footnotesize\ttfamily string Command\+To\+HTTP\+::get\+Request (\begin{DoxyParamCaption}\item[{string}]{name }\end{DoxyParamCaption})}
+
+Getter method for API requests that don\textquotesingle{}t need additional parameters 
+\begin{DoxyParams}{Parameters}
+{\em name} & Label for the API \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The URL path 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCommandToHTTP_a59bb265e8885bf2e7ec42f1acdff2c3f}\label{classCommandToHTTP_a59bb265e8885bf2e7ec42f1acdff2c3f}} 
+\index{CommandToHTTP@{CommandToHTTP}!getRequestWithParams@{getRequestWithParams}}
+\index{getRequestWithParams@{getRequestWithParams}!CommandToHTTP@{CommandToHTTP}}
+\doxysubsubsection{\texorpdfstring{getRequestWithParams()}{getRequestWithParams()}}
+{\footnotesize\ttfamily string Command\+To\+HTTP\+::get\+Request\+With\+Params (\begin{DoxyParamCaption}\item[{string}]{name,  }\item[{string}]{parameters\mbox{[}$\,$\mbox{]},  }\item[{int}]{size }\end{DoxyParamCaption})}
+
+Getter method for API requests that need additional input 
+\begin{DoxyParams}{Parameters}
+{\em name} & Label for the API \\
+\hline
+{\em parameters} & The array of inputs \\
+\hline
+{\em size} & Size of the array \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The URL path 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Command\+To\+HTTP.\+h\item 
+Command\+To\+HTTP.\+cpp\end{DoxyCompactItemize}

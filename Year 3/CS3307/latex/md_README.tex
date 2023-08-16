@@ -1,0 +1,48 @@
+README
+
+\mbox{\hyperlink{structReminder}{Reminder}} Program This program allows you to schedule reminders for specific dates and times.
+
+To run the program, type !reminders.
+
+Adding a \mbox{\hyperlink{structReminder}{Reminder}} To add a reminder, follow these steps\+:
+
+Enter a date in the format mm/dd. Enter a time in the format hh\+:mm. Enter a reminder message. Repeat steps 1-\/3 for additional reminders or type n to exit. The reminders will be stored in a text file called reminders.\+txt. When the scheduled time arrives, the reminder will be outputted to a text file called output.\+txt. In the future, instead of being outputted to output.\+txt, the reminder will be delivered through the home virtual assistant. \begin{DoxyVerb}-To exit the program, type n when prompted to add another reminder.
+\end{DoxyVerb}
+ This is a feature reminder program that will combine in with our main home assistant. It allows users to schedule reminders for specific dates and times. It uses a map to hold reminders for each day, and reminders are stored as structs that contain the reminder message, hour, and minute.
+
+The main function prompts the user to enter a date, time, and reminder message, and then adds the reminder to the appropriate date. Once the user is done adding reminders, the program writes all reminders to a file in cron format using the helper function write\+Reminders\+To\+File. This is how the cron format is followed\+:\hypertarget{md_README_autotoc_md26}{}\doxysection{┌───────────── minute (0 -\/ 59)}\label{md_README_autotoc_md26}
+\hypertarget{md_README_autotoc_md27}{}\doxysection{│ ┌───────────── hour (0 -\/ 23)}\label{md_README_autotoc_md27}
+\hypertarget{md_README_autotoc_md28}{}\doxysection{│ │ ┌───────────── day of the month (1 -\/ 31)}\label{md_README_autotoc_md28}
+\hypertarget{md_README_autotoc_md29}{}\doxysection{│ │ │ ┌───────────── month (1 -\/ 12)}\label{md_README_autotoc_md29}
+\hypertarget{md_README_autotoc_md30}{}\doxysection{│ │ │ │ ┌───────────── day of the week (0 -\/ 6) (\+Sunday to Saturday;}\label{md_README_autotoc_md30}
+\hypertarget{md_README_autotoc_md31}{}\doxysection{│ │ │ │ │                                   7 is also Sunday on some systems)}\label{md_README_autotoc_md31}
+\hypertarget{md_README_autotoc_md32}{}\doxysection{│ │ │ │ │}\label{md_README_autotoc_md32}
+\hypertarget{md_README_autotoc_md33}{}\doxysection{│ │ │ │ │}\label{md_README_autotoc_md33}
+\hypertarget{md_README_autotoc_md34}{}\doxysection{$\ast$ $\ast$ $\ast$ $\ast$ $\ast$ $<$command to execute$>$}\label{md_README_autotoc_md34}
+Finally, the program executes a shell script called reminder.\+sh, which sends the contents of the reminders file to the crontab jobs (which is originally crontab -\/e).
+
+The program requires a \mbox{\hyperlink{reminder_8h_source}{reminder.\+h}} header file that contains the \mbox{\hyperlink{structReminder}{Reminder}} struct, the reminders map, and the helper functions add\+Reminder and write\+Reminders\+To\+File.
+
+troubleshooting -\/make sure you can run the command\+: ./reminder.sh -\/make sure you have permission set to run reminder.\+sh (chmod +x reminder.\+sh) -\/to fix the error\+: bash\+: ./reminder.sh\+: /bin/bash$^\wedge$M\+: bad interpreter\+: No such file or directory -\/run this command\+: dos2unix reminder.\+sh -\/to fix this error error\+: errors in crontab file, can\textquotesingle{}t install. delete the file reminders.\+txt and create a new file called reminders.\+txt
+
+-\/if the reminder system is not working on your system, do the following -\/make sure you have permission set to run reminder.\+sh (chmod +x reminder.\+sh) -\/re install cron\+: -\/sudo apt-\/get install cron -\/sudo service cron start -\/sudo systemctl enable cron
+
+Local Files Program This is a simple command-\/line program written in C++ that allows users to create, update, delete and view files in the current working directory.\hypertarget{md_README_autotoc_md35}{}\doxysubsection{Notes}\label{md_README_autotoc_md35}
+\char`\"{}\+Request.\+json\char`\"{} is not included in the repo, but is available in OWL submissions. This is to keep the API keys somewhat private in case repo gets leaked, as some of the APIs actually cost money.\hypertarget{md_README_autotoc_md36}{}\doxysection{Depencencies}\label{md_README_autotoc_md36}
+
+\begin{DoxyEnumerate}
+\item SDL2 to capture audio can be installed with {\ttfamily sudo apt-\/get install libsdl2-\/dev}
+\item vlc to play text to speech can be installed with {\ttfamily sudo apt-\/get install vlc}
+\item curl to send api requests can be installed with {\ttfamily sudo apt-\/get install libcurl4-\/openssl-\/dev}
+\end{DoxyEnumerate}\hypertarget{md_README_autotoc_md37}{}\doxysection{Note\+: Installing SDL2 may give an error.}\label{md_README_autotoc_md37}
+This can be fixed with {\ttfamily sudo apt-\/get libsdl2-\/devgl-\/mesa0}\hypertarget{md_README_autotoc_md38}{}\doxysection{How to run\+:}\label{md_README_autotoc_md38}
+\hypertarget{md_README_autotoc_md39}{}\doxysubsection{Make sure you are in main directory and everything has been chmod 777\textquotesingle{}d}\label{md_README_autotoc_md39}
+
+\begin{DoxyEnumerate}
+\item {\ttfamily ./models/download-\/ggml-\/model.sh base.\+en} This shell script should download the trained models
+\item If the above step doesn\textquotesingle{}t work, ggml-\/base.\+en.\+bin must be downloaded from \href{https://huggingface.co/datasets/ggerganov/whisper.cpp/tree/main}{\texttt{ https\+://huggingface.\+co/datasets/ggerganov/whisper.\+cpp/tree/main}} and placed into /models folder
+\item The {\ttfamily ggml.\+o} and {\ttfamily whisper.\+o} files are per platform. Make sure to delete these and run {\ttfamily make} again if they were not compiled for the current platform.
+\item Run {\ttfamily make main\+Stream}
+\item Run {\ttfamily ./main\+Stream -\/m ./models/ggml-\/base.en.\+bin -\/t 8}. Running {\ttfamily ./main\+Stream -\/m models/ggml-\/base.\+en -\/-\/step 4000 -\/-\/length 8000 -\/c 0 -\/t 4 -\/ac 512} may be more successful on a raspberry pi platform.
+\item Speak into the mic. The output will be transcribed back to stdout. 
+\end{DoxyEnumerate}

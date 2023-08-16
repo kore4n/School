@@ -1,0 +1,80 @@
+\hypertarget{structwhisper__model}{}\doxysection{whisper\+\_\+model Struct Reference}
+\label{structwhisper__model}\index{whisper\_model@{whisper\_model}}
+
+
+Collaboration diagram for whisper\+\_\+model\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structwhisper__model__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structwhisper__model_a3731fc7b697e079b7469ce3eaba96bf6}\label{structwhisper__model_a3731fc7b697e079b7469ce3eaba96bf6}} 
+e\+\_\+model {\bfseries type} = MODEL\+\_\+\+UNKNOWN
+\item 
+\mbox{\Hypertarget{structwhisper__model_a2dab4b32463376199fed0f0de40090c2}\label{structwhisper__model_a2dab4b32463376199fed0f0de40090c2}} 
+\mbox{\hyperlink{structwhisper__hparams}{whisper\+\_\+hparams}} {\bfseries hparams}
+\item 
+\mbox{\Hypertarget{structwhisper__model_a80834057af16f22ca2f64611e5356078}\label{structwhisper__model_a80834057af16f22ca2f64611e5356078}} 
+\mbox{\hyperlink{structwhisper__filters}{whisper\+\_\+filters}} {\bfseries filters}
+\item 
+\mbox{\Hypertarget{structwhisper__model_aab89e9af0e90fd57ba640b488cb5a9cb}\label{structwhisper__model_aab89e9af0e90fd57ba640b488cb5a9cb}} 
+struct \mbox{\hyperlink{structggml__tensor}{ggml\+\_\+tensor}} $\ast$ {\bfseries e\+\_\+pe}
+\item 
+\mbox{\Hypertarget{structwhisper__model_a67c473b9da79d1085fb492639c926ccd}\label{structwhisper__model_a67c473b9da79d1085fb492639c926ccd}} 
+struct \mbox{\hyperlink{structggml__tensor}{ggml\+\_\+tensor}} $\ast$ {\bfseries e\+\_\+conv\+\_\+1\+\_\+w}
+\item 
+\mbox{\Hypertarget{structwhisper__model_ac0c0ccbbc28c90c2b5da68c3f75f1698}\label{structwhisper__model_ac0c0ccbbc28c90c2b5da68c3f75f1698}} 
+struct \mbox{\hyperlink{structggml__tensor}{ggml\+\_\+tensor}} $\ast$ {\bfseries e\+\_\+conv\+\_\+1\+\_\+b}
+\item 
+\mbox{\Hypertarget{structwhisper__model_a2e2f6634eec7b84c1249427f59417e19}\label{structwhisper__model_a2e2f6634eec7b84c1249427f59417e19}} 
+struct \mbox{\hyperlink{structggml__tensor}{ggml\+\_\+tensor}} $\ast$ {\bfseries e\+\_\+conv\+\_\+2\+\_\+w}
+\item 
+\mbox{\Hypertarget{structwhisper__model_afb6783de51d1c6d01840ed9268c3ff1a}\label{structwhisper__model_afb6783de51d1c6d01840ed9268c3ff1a}} 
+struct \mbox{\hyperlink{structggml__tensor}{ggml\+\_\+tensor}} $\ast$ {\bfseries e\+\_\+conv\+\_\+2\+\_\+b}
+\item 
+\mbox{\Hypertarget{structwhisper__model_a453d586df80aac6129455d81ded212bc}\label{structwhisper__model_a453d586df80aac6129455d81ded212bc}} 
+struct \mbox{\hyperlink{structggml__tensor}{ggml\+\_\+tensor}} $\ast$ {\bfseries e\+\_\+ln\+\_\+w}
+\item 
+\mbox{\Hypertarget{structwhisper__model_a1633ea15372ade9196466648379f080a}\label{structwhisper__model_a1633ea15372ade9196466648379f080a}} 
+struct \mbox{\hyperlink{structggml__tensor}{ggml\+\_\+tensor}} $\ast$ {\bfseries e\+\_\+ln\+\_\+b}
+\item 
+\mbox{\Hypertarget{structwhisper__model_ab654e9cc602db89409970b9278921d43}\label{structwhisper__model_ab654e9cc602db89409970b9278921d43}} 
+struct \mbox{\hyperlink{structggml__tensor}{ggml\+\_\+tensor}} $\ast$ {\bfseries d\+\_\+pe}
+\item 
+\mbox{\Hypertarget{structwhisper__model_aacd55518ec8cb4e94ca32915db9238d8}\label{structwhisper__model_aacd55518ec8cb4e94ca32915db9238d8}} 
+struct \mbox{\hyperlink{structggml__tensor}{ggml\+\_\+tensor}} $\ast$ {\bfseries d\+\_\+te}
+\item 
+\mbox{\Hypertarget{structwhisper__model_aad0618039d98493152e82139705b46b4}\label{structwhisper__model_aad0618039d98493152e82139705b46b4}} 
+struct \mbox{\hyperlink{structggml__tensor}{ggml\+\_\+tensor}} $\ast$ {\bfseries d\+\_\+ln\+\_\+w}
+\item 
+\mbox{\Hypertarget{structwhisper__model_a23f6b2e3d600291490983b30fa99da5a}\label{structwhisper__model_a23f6b2e3d600291490983b30fa99da5a}} 
+struct \mbox{\hyperlink{structggml__tensor}{ggml\+\_\+tensor}} $\ast$ {\bfseries d\+\_\+ln\+\_\+b}
+\item 
+\mbox{\Hypertarget{structwhisper__model_aff1cc9b6f150b7d90a27b0f862cce3fa}\label{structwhisper__model_aff1cc9b6f150b7d90a27b0f862cce3fa}} 
+std\+::vector$<$ \mbox{\hyperlink{structwhisper__layer__encoder}{whisper\+\_\+layer\+\_\+encoder}} $>$ {\bfseries layers\+\_\+encoder}
+\item 
+\mbox{\Hypertarget{structwhisper__model_af4bf542c4cf82e54ff564a205836ed99}\label{structwhisper__model_af4bf542c4cf82e54ff564a205836ed99}} 
+std\+::vector$<$ \mbox{\hyperlink{structwhisper__layer__decoder}{whisper\+\_\+layer\+\_\+decoder}} $>$ {\bfseries layers\+\_\+decoder}
+\item 
+\mbox{\Hypertarget{structwhisper__model_a24fd7bffab30b9fc2ab3dde95e286313}\label{structwhisper__model_a24fd7bffab30b9fc2ab3dde95e286313}} 
+struct \mbox{\hyperlink{structggml__context}{ggml\+\_\+context}} $\ast$ {\bfseries ctx}
+\item 
+\mbox{\Hypertarget{structwhisper__model_a2ee590e735486484a599f770c6692270}\label{structwhisper__model_a2ee590e735486484a599f770c6692270}} 
+std\+::vector$<$ uint8\+\_\+t $>$ $\ast$ {\bfseries buf}
+\item 
+\mbox{\Hypertarget{structwhisper__model_a181ce599348a936f64d24cef5c9fcb1f}\label{structwhisper__model_a181ce599348a936f64d24cef5c9fcb1f}} 
+int {\bfseries n\+\_\+loaded}
+\item 
+\mbox{\Hypertarget{structwhisper__model_a1f87a4d8797a97d98441863bb907eb87}\label{structwhisper__model_a1f87a4d8797a97d98441863bb907eb87}} 
+std\+::map$<$ std\+::string, struct \mbox{\hyperlink{structggml__tensor}{ggml\+\_\+tensor}} $\ast$ $>$ {\bfseries tensors}
+\end{DoxyCompactItemize}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+whisper.\+cpp\end{DoxyCompactItemize}

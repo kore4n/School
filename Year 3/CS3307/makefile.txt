@@ -1,0 +1,11 @@
+CXXFLAGS = -lcurl -std=c++11
+main: main.cpp request.cpp CommandToHTTP.cpp response.cpp commandCenter.cpp LocalFiles.cpp reminder.cpp 
+	g++ -o main main.cpp request.cpp CommandToHTTP.cpp response.cpp commandCenter.cpp LocalFiles.cpp reminder.cpp $(CXXFLAGS)
+	sudo apt-get install cron
+	sudo service cron start
+	sudo systemctl enable cron
+	chmod +x *
+    dos2unix reminder.sh
+    ./reminder.sh
+
+

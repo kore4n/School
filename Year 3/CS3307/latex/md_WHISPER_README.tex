@@ -1,0 +1,522 @@
+Expand to see the result
+
+\href{https://github.com/ggerganov/whisper.cpp/actions}{\texttt{ }} \href{https://opensource.org/licenses/MIT}{\texttt{ }} \href{https://www.npmjs.com/package/whisper.cpp/}{\texttt{ }}
+
+Stable\+: \href{https://github.com/ggerganov/whisper.cpp/releases/tag/v1.2.1}{\texttt{ v1.\+2.\+1}} / \href{https://github.com/ggerganov/whisper.cpp/discussions/126}{\texttt{ Roadmap $\vert$ F.\+A.\+Q.}}
+
+High-\/performance inference of \href{https://github.com/openai/whisper}{\texttt{ Open\+AI\textquotesingle{}s Whisper}} automatic speech recognition (ASR) model\+:
+
+
+\begin{DoxyItemize}
+\item Plain C/\+C++ implementation without dependencies
+\item Apple silicon first-\/class citizen -\/ optimized via Arm Neon and Accelerate framework
+\item AVX intrinsics support for x86 architectures
+\item VSX intrinsics support for POWER architectures
+\item Mixed F16 / F32 precision
+\item Low memory usage (Flash Attention)
+\item Zero memory allocations at runtime
+\item Runs on the CPU
+\item \href{https://github.com/ggerganov/whisper.cpp/blob/master/whisper.h}{\texttt{ C-\/style API}}
+\end{DoxyItemize}
+
+Supported platforms\+:
+
+
+\begin{DoxyItemize}
+\item \mbox{[}x\mbox{]} Mac OS (Intel and Arm)
+\item \mbox{[}x\mbox{]} \href{examples/whisper.objc}{\texttt{ i\+OS}}
+\item \mbox{[}x\mbox{]} \href{examples/whisper.android}{\texttt{ Android}}
+\item \mbox{[}x\mbox{]} Linux / \href{https://github.com/ggerganov/whisper.cpp/issues/56\#issuecomment-1350920264}{\texttt{ Free\+BSD}}
+\item \mbox{[}x\mbox{]} \href{examples/whisper.wasm}{\texttt{ Web\+Assembly}}
+\item \mbox{[}x\mbox{]} Windows (\href{https://github.com/ggerganov/whisper.cpp/blob/master/.github/workflows/build.yml\#L117-L144}{\texttt{ MSVC}} and \href{https://github.com/ggerganov/whisper.cpp/issues/168}{\texttt{ Min\+GW}}\mbox{]}
+\item \mbox{[}x\mbox{]} \href{https://github.com/ggerganov/whisper.cpp/discussions/166}{\texttt{ Raspberry Pi}}
+\end{DoxyItemize}
+
+The entire implementation of the model is contained in 2 source files\+:
+
+
+\begin{DoxyItemize}
+\item Tensor operations\+: \href{ggml.h}{\texttt{ ggml.\+h}} / \href{ggml.c}{\texttt{ ggml.\+c}}
+\item Transformer inference\+: \href{whisper.h}{\texttt{ whisper.\+h}} / \href{whisper.cpp}{\texttt{ whisper.\+cpp}}
+\end{DoxyItemize}
+
+Having such a lightweight implementation of the model allows to easily integrate it in different platforms and applications. As an example, here is a video of running the model on an i\+Phone 13 device -\/ fully offline, on-\/device\+: \href{examples/whisper.objc}{\texttt{ whisper.\+objc}}
+
+\href{https://user-images.githubusercontent.com/1991296/197385372-962a6dea-bca1-4d50-bf96-1d8c27b98c81.mp4}{\texttt{ https\+://user-\/images.\+githubusercontent.\+com/1991296/197385372-\/962a6dea-\/bca1-\/4d50-\/bf96-\/1d8c27b98c81.\+mp4}}
+
+You can also easily make your own offline voice assistant application\+: \href{examples/command}{\texttt{ command}}
+
+\href{https://user-images.githubusercontent.com/1991296/204038393-2f846eae-c255-4099-a76d-5735c25c49da.mp4}{\texttt{ https\+://user-\/images.\+githubusercontent.\+com/1991296/204038393-\/2f846eae-\/c255-\/4099-\/a76d-\/5735c25c49da.\+mp4}}
+
+Or you can even run it straight in the browser\+: \href{examples/talk.wasm}{\texttt{ talk.\+wasm}}\hypertarget{md_WHISPER_README_autotoc_md41}{}\doxysection{Implementation details}\label{md_WHISPER_README_autotoc_md41}
+
+\begin{DoxyItemize}
+\item The core tensor operations are implemented in C (\href{ggml.h}{\texttt{ ggml.\+h}} / \href{ggml.c}{\texttt{ ggml.\+c}})
+\item The transformer model and the high-\/level C-\/style API are implemented in C++ (\href{whisper.h}{\texttt{ whisper.\+h}} / \href{whisper.cpp}{\texttt{ whisper.\+cpp}})
+\item Sample usage is demonstrated in \href{examples/main}{\texttt{ main.\+cpp}}
+\item Sample real-\/time audio transcription from the microphone is demonstrated in \href{examples/stream}{\texttt{ stream.\+cpp}}
+\item Various other examples are available in the \mbox{[}examples\mbox{]}(examples) folder
+\end{DoxyItemize}
+
+The tensor operators are optimized heavily for Apple silicon CPUs. Depending on the computation size, Arm Neon SIMD instrisics or CBLAS Accelerate framework routines are used. The latter are especially effective for bigger sizes since the Accelerate framework utilizes the special-\/purpose AMX coprocessor available in modern Apple products.\hypertarget{md_WHISPER_README_autotoc_md42}{}\doxysection{Quick start}\label{md_WHISPER_README_autotoc_md42}
+First, download one of the Whisper models converted in \mbox{[}ggml format\mbox{]}(models). For example\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{bash ./models/download-\/ggml-\/model.sh base.en}
+
+\end{DoxyCode}
+
+
+Now build the \href{examples/main}{\texttt{ main}} example and transcribe an audio file like this\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\# build the main example}
+\DoxyCodeLine{make}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# transcribe an audio file}
+\DoxyCodeLine{./main -\/f samples/jfk.wav}
+
+\end{DoxyCode}
+
+
+\DoxyHorRuler{0}
+
+
+For a quick demo, simply run {\ttfamily make base.\+en}\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$ make base.en}
+\DoxyCodeLine{}
+\DoxyCodeLine{cc  -\/I.              -\/O3 -\/std=c11   -\/pthread -\/DGGML\_USE\_ACCELERATE   -\/c ggml.c -\/o ggml.o}
+\DoxyCodeLine{c++ -\/I. -\/I./examples -\/O3 -\/std=c++11 -\/pthread -\/c whisper.cpp -\/o whisper.o}
+\DoxyCodeLine{c++ -\/I. -\/I./examples -\/O3 -\/std=c++11 -\/pthread examples/main/main.cpp whisper.o ggml.o -\/o main  -\/framework Accelerate}
+\DoxyCodeLine{./main -\/h}
+\DoxyCodeLine{}
+\DoxyCodeLine{usage: ./main [options] file0.wav file1.wav ...}
+\DoxyCodeLine{}
+\DoxyCodeLine{options:}
+\DoxyCodeLine{  -\/h,        -\/-\/help              [\textcolor{keywordflow}{default}] show \textcolor{keyword}{this} help message and exit}
+\DoxyCodeLine{  -\/t N,      -\/-\/threads N         [4      ] number of threads to use during computation}
+\DoxyCodeLine{  -\/p N,      -\/-\/processors N      [1      ] number of processors to use during computation}
+\DoxyCodeLine{  -\/ot N,     -\/-\/offset-\/t N        [0      ] time offset in milliseconds}
+\DoxyCodeLine{  -\/on N,     -\/-\/offset-\/n N        [0      ] segment index offset}
+\DoxyCodeLine{  -\/d  N,     -\/-\/duration N        [0      ] duration of audio to process in milliseconds}
+\DoxyCodeLine{  -\/mc N,     -\/-\/max-\/context N     [-\/1     ] maximum number of text context tokens to store}
+\DoxyCodeLine{  -\/ml N,     -\/-\/max-\/len N         [0      ] maximum segment length in characters}
+\DoxyCodeLine{  -\/bo N,     -\/-\/best-\/of N         [5      ] number of best candidates to keep}
+\DoxyCodeLine{  -\/bs N,     -\/-\/beam-\/size N       [-\/1     ] beam size \textcolor{keywordflow}{for} beam search}
+\DoxyCodeLine{  -\/wt N,     -\/-\/word-\/thold N      [0.01   ] word timestamp probability threshold}
+\DoxyCodeLine{  -\/et N,     -\/-\/entropy-\/thold N   [2.40   ] entropy threshold \textcolor{keywordflow}{for} decoder fail}
+\DoxyCodeLine{  -\/lpt N,    -\/-\/logprob-\/thold N   [-\/1.00  ] log probability threshold \textcolor{keywordflow}{for} decoder fail}
+\DoxyCodeLine{  -\/su,       -\/-\/speed-\/up          [false  ] speed up audio by x2 (reduced accuracy)}
+\DoxyCodeLine{  -\/tr,       -\/-\/translate         [false  ] translate from source language to english}
+\DoxyCodeLine{  -\/di,       -\/-\/diarize           [false  ] stereo audio diarization}
+\DoxyCodeLine{  -\/nf,       -\/-\/no-\/fallback       [false  ] \textcolor{keywordflow}{do} not use temperature fallback \textcolor{keywordflow}{while} decoding}
+\DoxyCodeLine{  -\/otxt,     -\/-\/output-\/txt        [false  ] output result in a text file}
+\DoxyCodeLine{  -\/ovtt,     -\/-\/output-\/vtt        [false  ] output result in a vtt file}
+\DoxyCodeLine{  -\/osrt,     -\/-\/output-\/srt        [false  ] output result in a srt file}
+\DoxyCodeLine{  -\/owts,     -\/-\/output-\/words      [false  ] output script \textcolor{keywordflow}{for} generating karaoke video}
+\DoxyCodeLine{  -\/ocsv,     -\/-\/output-\/csv        [false  ] output result in a CSV file}
+\DoxyCodeLine{  -\/of FNAME, -\/-\/output-\/file FNAME [       ] output file path (without file extension)}
+\DoxyCodeLine{  -\/ps,       -\/-\/print-\/special     [false  ] print special tokens}
+\DoxyCodeLine{  -\/pc,       -\/-\/print-\/colors      [false  ] print colors}
+\DoxyCodeLine{  -\/pp,       -\/-\/print-\/progress    [false  ] print progress}
+\DoxyCodeLine{  -\/nt,       -\/-\/no-\/timestamps     [true   ] \textcolor{keywordflow}{do} not print timestamps}
+\DoxyCodeLine{  -\/l LANG,   -\/-\/language LANG     [en     ] spoken language (\textcolor{stringliteral}{'auto'} \textcolor{keywordflow}{for} \textcolor{keyword}{auto}-\/detect)}
+\DoxyCodeLine{             -\/-\/prompt PROMPT     [       ] initial prompt}
+\DoxyCodeLine{  -\/m FNAME,  -\/-\/model FNAME       [models/ggml-\/base.en.bin] model path}
+\DoxyCodeLine{  -\/f FNAME,  -\/-\/file FNAME        [       ] input WAV file path}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{bash ./models/download-\/ggml-\/model.sh base.en}
+\DoxyCodeLine{Downloading ggml model base.en ...}
+\DoxyCodeLine{ggml-\/base.en.bin               100\%[========================>] 141.11M  6.34MB/s    in 24s}
+\DoxyCodeLine{Done! Model \textcolor{stringliteral}{'base.en'} saved in \textcolor{stringliteral}{'models/ggml-\/base.en.bin'}}
+\DoxyCodeLine{You can now use it like \textcolor{keyword}{this}:}
+\DoxyCodeLine{}
+\DoxyCodeLine{  \$ ./main -\/m models/ggml-\/base.en.bin -\/f samples/jfk.wav}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{===============================================}
+\DoxyCodeLine{Running base.en on all samples in ./samples ...}
+\DoxyCodeLine{===============================================}
+\DoxyCodeLine{}
+\DoxyCodeLine{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}
+\DoxyCodeLine{[+] Running base.en on samples/jfk.wav ... (run \textcolor{stringliteral}{'ffplay samples/jfk.wav'} to listen)}
+\DoxyCodeLine{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}
+\DoxyCodeLine{}
+\DoxyCodeLine{whisper\_init\_from\_file: loading model from \textcolor{stringliteral}{'models/ggml-\/base.en.bin'}}
+\DoxyCodeLine{whisper\_model\_load: loading model}
+\DoxyCodeLine{whisper\_model\_load: n\_vocab       = 51864}
+\DoxyCodeLine{whisper\_model\_load: n\_audio\_ctx   = 1500}
+\DoxyCodeLine{whisper\_model\_load: n\_audio\_state = 512}
+\DoxyCodeLine{whisper\_model\_load: n\_audio\_head  = 8}
+\DoxyCodeLine{whisper\_model\_load: n\_audio\_layer = 6}
+\DoxyCodeLine{whisper\_model\_load: n\_text\_ctx    = 448}
+\DoxyCodeLine{whisper\_model\_load: n\_text\_state  = 512}
+\DoxyCodeLine{whisper\_model\_load: n\_text\_head   = 8}
+\DoxyCodeLine{whisper\_model\_load: n\_text\_layer  = 6}
+\DoxyCodeLine{whisper\_model\_load: n\_mels        = 80}
+\DoxyCodeLine{whisper\_model\_load: f16           = 1}
+\DoxyCodeLine{whisper\_model\_load: type          = 2}
+\DoxyCodeLine{whisper\_model\_load: mem required  =  215.00 MB (+    6.00 MB per decoder)}
+\DoxyCodeLine{whisper\_model\_load: kv \textcolor{keyword}{self} size  =    5.25 MB}
+\DoxyCodeLine{whisper\_model\_load: kv cross size =   17.58 MB}
+\DoxyCodeLine{whisper\_model\_load: adding 1607 extra tokens}
+\DoxyCodeLine{whisper\_model\_load: model ctx     =  140.60 MB}
+\DoxyCodeLine{whisper\_model\_load: model size    =  140.54 MB}
+\DoxyCodeLine{}
+\DoxyCodeLine{system\_info: n\_threads = 4 / 10 | AVX = 0 | AVX2 = 0 | AVX512 = 0 | FMA = 0 | NEON = 1 | ARM\_FMA = 1 | F16C = 0 | FP16\_VA = 1 | WASM\_SIMD = 0 | BLAS = 1 | SSE3 = 0 | VSX = 0 |}
+\DoxyCodeLine{}
+\DoxyCodeLine{main: processing \textcolor{stringliteral}{'samples/jfk.wav'} (176000 samples, 11.0 sec), 4 threads, 1 processors, lang = en, task = transcribe, timestamps = 1 ...}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{[00:00:00.000 -\/-\/> 00:00:11.000]   And so my fellow Americans, ask not what your country can \textcolor{keywordflow}{do} \textcolor{keywordflow}{for} you, ask what you can \textcolor{keywordflow}{do} \textcolor{keywordflow}{for} your country.}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{whisper\_print\_timings:     fallbacks =   0 p /   0 h}
+\DoxyCodeLine{whisper\_print\_timings:     load time =   113.81 ms}
+\DoxyCodeLine{whisper\_print\_timings:      mel time =    15.40 ms}
+\DoxyCodeLine{whisper\_print\_timings:   sample time =    11.58 ms /    27 runs (    0.43 ms per run)}
+\DoxyCodeLine{whisper\_print\_timings:   encode time =   266.60 ms /     1 runs (  266.60 ms per run)}
+\DoxyCodeLine{whisper\_print\_timings:   decode time =    66.11 ms /    27 runs (    2.45 ms per run)}
+\DoxyCodeLine{whisper\_print\_timings:    total time =   476.31 ms}
+
+\end{DoxyCode}
+
+
+The command downloads the {\ttfamily base.\+en} model converted to custom {\ttfamily ggml} format and runs the inference on all {\ttfamily .wav} samples in the folder {\ttfamily samples}.
+
+For detailed usage instructions, run\+: {\ttfamily ./main -\/h}
+
+Note that the \href{examples/main}{\texttt{ main}} example currently runs only with 16-\/bit WAV files, so make sure to convert your input before running the tool. For example, you can use {\ttfamily ffmpeg} like this\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ffmpeg -\/i input.mp3 -\/ar 16000 -\/ac 1 -\/c:a pcm\_s16le output.wav}
+
+\end{DoxyCode}
+\hypertarget{md_WHISPER_README_autotoc_md44}{}\doxysection{More audio samples}\label{md_WHISPER_README_autotoc_md44}
+If you want some extra audio samples to play with, simply run\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{make samples}
+
+\end{DoxyCode}
+
+
+This will download a few more audio files from Wikipedia and convert them to 16-\/bit WAV format via {\ttfamily ffmpeg}.
+
+You can download and run the other models as follows\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{make tiny.en}
+\DoxyCodeLine{make tiny}
+\DoxyCodeLine{make base.en}
+\DoxyCodeLine{make base}
+\DoxyCodeLine{make small.en}
+\DoxyCodeLine{make small}
+\DoxyCodeLine{make medium.en}
+\DoxyCodeLine{make medium}
+\DoxyCodeLine{make large-\/v1}
+\DoxyCodeLine{make large}
+
+\end{DoxyCode}
+\hypertarget{md_WHISPER_README_autotoc_md45}{}\doxysection{Memory usage}\label{md_WHISPER_README_autotoc_md45}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{4}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Model   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Disk   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Mem   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ SHA    }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Model   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Disk   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Mem   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ SHA    }\\\cline{1-4}
+\endhead
+tiny   &75 MB   &$\sim$125 MB   &{\ttfamily bd577a113a864445d4c299885e0cb97d4ba92b5f}    \\\cline{1-4}
+base   &142 MB   &$\sim$210 MB   &{\ttfamily 465707469ff3a37a2b9b8d8f89f2f99de7299dac}    \\\cline{1-4}
+small   &466 MB   &$\sim$600 MB   &{\ttfamily 55356645c2b361a969dfd0ef2c5a50d530afd8d5}    \\\cline{1-4}
+medium   &1.\+5 GB   &$\sim$1.7 GB   &{\ttfamily fd9727b6e1217c2f614f9b698455c4ffd82463b4}    \\\cline{1-4}
+large   &2.\+9 GB   &$\sim$3.3 GB   &{\ttfamily 0f4c8e34f21cf1a914c59d8b3ce882345ad349d6}   \\\cline{1-4}
+\end{longtabu}
+\hypertarget{md_WHISPER_README_autotoc_md46}{}\doxysection{Limitations}\label{md_WHISPER_README_autotoc_md46}
+
+\begin{DoxyItemize}
+\item Inference only
+\item No GPU support (yet)
+\end{DoxyItemize}\hypertarget{md_WHISPER_README_autotoc_md47}{}\doxysection{Another example}\label{md_WHISPER_README_autotoc_md47}
+Here is another example of transcribing a \href{https://upload.wikimedia.org/wikipedia/commons/1/1f/George_W_Bush_Columbia_FINAL.ogg}{\texttt{ 3\+:24 min speech}} in about half a minute on a Mac\+Book M1 Pro, using {\ttfamily medium.\+en} model\+:
+
+$<$details$>$
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$ ./main -\/m models/ggml-\/medium.en.bin -\/f samples/gb1.wav -\/t 8}
+\DoxyCodeLine{}
+\DoxyCodeLine{whisper\_init\_from\_file: loading model from \textcolor{stringliteral}{'models/ggml-\/medium.en.bin'}}
+\DoxyCodeLine{whisper\_model\_load: loading model}
+\DoxyCodeLine{whisper\_model\_load: n\_vocab       = 51864}
+\DoxyCodeLine{whisper\_model\_load: n\_audio\_ctx   = 1500}
+\DoxyCodeLine{whisper\_model\_load: n\_audio\_state = 1024}
+\DoxyCodeLine{whisper\_model\_load: n\_audio\_head  = 16}
+\DoxyCodeLine{whisper\_model\_load: n\_audio\_layer = 24}
+\DoxyCodeLine{whisper\_model\_load: n\_text\_ctx    = 448}
+\DoxyCodeLine{whisper\_model\_load: n\_text\_state  = 1024}
+\DoxyCodeLine{whisper\_model\_load: n\_text\_head   = 16}
+\DoxyCodeLine{whisper\_model\_load: n\_text\_layer  = 24}
+\DoxyCodeLine{whisper\_model\_load: n\_mels        = 80}
+\DoxyCodeLine{whisper\_model\_load: f16           = 1}
+\DoxyCodeLine{whisper\_model\_load: type          = 4}
+\DoxyCodeLine{whisper\_model\_load: mem required  = 1720.00 MB (+   43.00 MB per decoder)}
+\DoxyCodeLine{whisper\_model\_load: kv \textcolor{keyword}{self} size  =   42.00 MB}
+\DoxyCodeLine{whisper\_model\_load: kv cross size =  140.62 MB}
+\DoxyCodeLine{whisper\_model\_load: adding 1607 extra tokens}
+\DoxyCodeLine{whisper\_model\_load: model ctx     = 1462.35 MB}
+\DoxyCodeLine{whisper\_model\_load: model size    = 1462.12 MB}
+\DoxyCodeLine{}
+\DoxyCodeLine{system\_info: n\_threads = 8 / 10 | AVX = 0 | AVX2 = 0 | AVX512 = 0 | FMA = 0 | NEON = 1 | ARM\_FMA = 1 | F16C = 0 | FP16\_VA = 1 | WASM\_SIMD = 0 | BLAS = 1 | SSE3 = 0 | VSX = 0 |}
+\DoxyCodeLine{}
+\DoxyCodeLine{main: processing \textcolor{stringliteral}{'samples/gb1.wav'} (3179750 samples, 198.7 sec), 8 threads, 1 processors, lang = en, task = transcribe, timestamps = 1 ...}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{[00:00:00.000 -\/-\/> 00:00:08.000]   My fellow Americans, \textcolor{keyword}{this} day has brought terrible news and great sadness to our country.}
+\DoxyCodeLine{[00:00:08.000 -\/-\/> 00:00:17.000]   At nine o\textcolor{stringliteral}{'clock this morning, Mission Control in Houston lost contact with our Space Shuttle Columbia.}}
+\DoxyCodeLine{\textcolor{stringliteral}{[00:00:17.000 -\/-\/> 00:00:23.000]   A short time later, debris was seen falling from the skies above Texas.}}
+\DoxyCodeLine{\textcolor{stringliteral}{[00:00:23.000 -\/-\/> 00:00:29.000]   The Columbia'}s lost. There are no survivors.}
+\DoxyCodeLine{[00:00:29.000 -\/-\/> 00:00:32.000]   On board was a crew of seven.}
+\DoxyCodeLine{[00:00:32.000 -\/-\/> 00:00:39.000]   Colonel Rick Husband, Lieutenant Colonel Michael Anderson, Commander Laurel Clark,}
+\DoxyCodeLine{[00:00:39.000 -\/-\/> 00:00:48.000]   Captain David Brown, Commander William McCool, Dr. Kultna Shavla, and Ilan Ramon,}
+\DoxyCodeLine{[00:00:48.000 -\/-\/> 00:00:52.000]   a colonel in the Israeli Air Force.}
+\DoxyCodeLine{[00:00:52.000 -\/-\/> 00:00:58.000]   These men and women assumed great risk in the service to all humanity.}
+\DoxyCodeLine{[00:00:58.000 -\/-\/> 00:01:03.000]   In an age when space flight has come to seem almost routine,}
+\DoxyCodeLine{[00:01:03.000 -\/-\/> 00:01:07.000]   it is easy to overlook the dangers of travel by rocket}
+\DoxyCodeLine{[00:01:07.000 -\/-\/> 00:01:12.000]   and the difficulties of navigating the fierce outer atmosphere of the Earth.}
+\DoxyCodeLine{[00:01:12.000 -\/-\/> 00:01:18.000]   These astronauts knew the dangers, and they faced them willingly,}
+\DoxyCodeLine{[00:01:18.000 -\/-\/> 00:01:23.000]   knowing they had a high and noble purpose in life.}
+\DoxyCodeLine{[00:01:23.000 -\/-\/> 00:01:31.000]   Because of their courage and daring and idealism, we will miss them all the more.}
+\DoxyCodeLine{[00:01:31.000 -\/-\/> 00:01:36.000]   All Americans today are thinking as well of the families of these men and women}
+\DoxyCodeLine{[00:01:36.000 -\/-\/> 00:01:40.000]   who have been given \textcolor{keyword}{this} sudden shock and grief.}
+\DoxyCodeLine{[00:01:40.000 -\/-\/> 00:01:45.000]   You\textcolor{stringliteral}{'re not alone. Our entire nation grieves with you,}}
+\DoxyCodeLine{\textcolor{stringliteral}{[00:01:45.000 -\/-\/> 00:01:52.000]   and those you love will always have the respect and gratitude of this country.}}
+\DoxyCodeLine{\textcolor{stringliteral}{[00:01:52.000 -\/-\/> 00:01:56.000]   The cause in which they died will continue.}}
+\DoxyCodeLine{\textcolor{stringliteral}{[00:01:56.000 -\/-\/> 00:02:04.000]   Mankind is led into the darkness beyond our world by the inspiration of discovery}}
+\DoxyCodeLine{\textcolor{stringliteral}{[00:02:04.000 -\/-\/> 00:02:11.000]   and the longing to understand. Our journey into space will go on.}}
+\DoxyCodeLine{\textcolor{stringliteral}{[00:02:11.000 -\/-\/> 00:02:16.000]   In the skies today, we saw destruction and tragedy.}}
+\DoxyCodeLine{\textcolor{stringliteral}{[00:02:16.000 -\/-\/> 00:02:22.000]   Yet farther than we can see, there is comfort and hope.}}
+\DoxyCodeLine{\textcolor{stringliteral}{[00:02:22.000 -\/-\/> 00:02:29.000]   In the words of the prophet Isaiah, "{}Lift your eyes and look to the heavens}}
+\DoxyCodeLine{\textcolor{stringliteral}{[00:02:29.000 -\/-\/> 00:02:35.000]   who created all these. He who brings out the starry hosts one by one}}
+\DoxyCodeLine{\textcolor{stringliteral}{[00:02:35.000 -\/-\/> 00:02:39.000]   and calls them each by name."{}}}
+\DoxyCodeLine{\textcolor{stringliteral}{[00:02:39.000 -\/-\/> 00:02:46.000]   Because of His great power and mighty strength, not one of them is missing.}}
+\DoxyCodeLine{\textcolor{stringliteral}{[00:02:46.000 -\/-\/> 00:02:55.000]   The same Creator who names the stars also knows the names of the seven souls we mourn today.}}
+\DoxyCodeLine{\textcolor{stringliteral}{[00:02:55.000 -\/-\/> 00:03:01.000]   The crew of the shuttle Columbia did not return safely to earth,}}
+\DoxyCodeLine{\textcolor{stringliteral}{[00:03:01.000 -\/-\/> 00:03:05.000]   yet we can pray that all are safely home.}}
+\DoxyCodeLine{\textcolor{stringliteral}{[00:03:05.000 -\/-\/> 00:03:13.000]   May God bless the grieving families, and may God continue to bless America.}}
+\DoxyCodeLine{\textcolor{stringliteral}{[00:03:13.000 -\/-\/> 00:03:19.000]   [Silence]}}
+\DoxyCodeLine{\textcolor{stringliteral}{}}
+\DoxyCodeLine{\textcolor{stringliteral}{}}
+\DoxyCodeLine{\textcolor{stringliteral}{whisper\_print\_timings:     fallbacks =   1 p /   0 h}}
+\DoxyCodeLine{\textcolor{stringliteral}{whisper\_print\_timings:     load time =   569.03 ms}}
+\DoxyCodeLine{\textcolor{stringliteral}{whisper\_print\_timings:      mel time =   146.85 ms}}
+\DoxyCodeLine{\textcolor{stringliteral}{whisper\_print\_timings:   sample time =   238.66 ms /   553 runs (    0.43 ms per run)}}
+\DoxyCodeLine{\textcolor{stringliteral}{whisper\_print\_timings:   encode time = 18665.10 ms /     9 runs ( 2073.90 ms per run)}}
+\DoxyCodeLine{\textcolor{stringliteral}{whisper\_print\_timings:   decode time = 13090.93 ms /   549 runs (   23.85 ms per run)}}
+\DoxyCodeLine{\textcolor{stringliteral}{whisper\_print\_timings:    total time = 32733.52 ms}}
+
+\end{DoxyCode}
+ $<$/details$>$\hypertarget{md_WHISPER_README_autotoc_md48}{}\doxysection{Real-\/time audio input example}\label{md_WHISPER_README_autotoc_md48}
+This is a naive example of performing real-\/time inference on audio from your microphone. The \href{examples/stream}{\texttt{ stream}} tool samples the audio every half a second and runs the transcription continously. More info is available in \href{https://github.com/ggerganov/whisper.cpp/issues/10}{\texttt{ issue \#10}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{make stream}
+\DoxyCodeLine{./stream -\/m ./models/ggml-\/base.en.bin -\/t 8 -\/-\/step 500 -\/-\/length 5000}
+
+\end{DoxyCode}
+
+
+\href{https://user-images.githubusercontent.com/1991296/194935793-76afede7-cfa8-48d8-a80f-28ba83be7d09.mp4}{\texttt{ https\+://user-\/images.\+githubusercontent.\+com/1991296/194935793-\/76afede7-\/cfa8-\/48d8-\/a80f-\/28ba83be7d09.\+mp4}}\hypertarget{md_WHISPER_README_autotoc_md49}{}\doxysection{Confidence color-\/coding}\label{md_WHISPER_README_autotoc_md49}
+Adding the {\ttfamily -\/-\/print-\/colors} argument will print the transcribed text using an experimental color coding strategy to highlight words with high or low confidence\+:
+
+\hypertarget{md_WHISPER_README_autotoc_md50}{}\doxysection{Controlling the length of the generated text segments (experimental)}\label{md_WHISPER_README_autotoc_md50}
+For example, to limit the line length to a maximum of 16 characters, simply add {\ttfamily -\/ml 16}\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{./main -\/m ./models/ggml-\/base.en.bin -\/f ./samples/jfk.wav -\/ml 16}
+\DoxyCodeLine{}
+\DoxyCodeLine{whisper\_model\_load: loading model from \textcolor{stringliteral}{'./models/ggml-\/base.en.bin'}}
+\DoxyCodeLine{...}
+\DoxyCodeLine{system\_info: n\_threads = 4 / 10 | AVX2 = 0 | AVX512 = 0 | NEON = 1 | FP16\_VA = 1 | WASM\_SIMD = 0 | BLAS = 1 |}
+\DoxyCodeLine{}
+\DoxyCodeLine{main: processing \textcolor{stringliteral}{'./samples/jfk.wav'} (176000 samples, 11.0 sec), 4 threads, 1 processors, lang = en, task = transcribe, timestamps = 1 ...}
+\DoxyCodeLine{}
+\DoxyCodeLine{[00:00:00.000 -\/-\/> 00:00:00.850]   And so my}
+\DoxyCodeLine{[00:00:00.850 -\/-\/> 00:00:01.590]   fellow}
+\DoxyCodeLine{[00:00:01.590 -\/-\/> 00:00:04.140]   Americans, ask}
+\DoxyCodeLine{[00:00:04.140 -\/-\/> 00:00:05.660]   not what your}
+\DoxyCodeLine{[00:00:05.660 -\/-\/> 00:00:06.840]   country can \textcolor{keywordflow}{do}}
+\DoxyCodeLine{[00:00:06.840 -\/-\/> 00:00:08.430]   \textcolor{keywordflow}{for} you, ask}
+\DoxyCodeLine{[00:00:08.430 -\/-\/> 00:00:09.440]   what you can \textcolor{keywordflow}{do}}
+\DoxyCodeLine{[00:00:09.440 -\/-\/> 00:00:10.020]   \textcolor{keywordflow}{for} your}
+\DoxyCodeLine{[00:00:10.020 -\/-\/> 00:00:11.000]   country.}
+
+\end{DoxyCode}
+\hypertarget{md_WHISPER_README_autotoc_md51}{}\doxysection{Word-\/level timestamp}\label{md_WHISPER_README_autotoc_md51}
+The {\ttfamily -\/-\/max-\/len} argument can be used to obtain word-\/level timestamps. Simply use {\ttfamily -\/ml 1}\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{./main -\/m ./models/ggml-\/base.en.bin -\/f ./samples/jfk.wav -\/ml 1}
+\DoxyCodeLine{}
+\DoxyCodeLine{whisper\_model\_load: loading model from \textcolor{stringliteral}{'./models/ggml-\/base.en.bin'}}
+\DoxyCodeLine{...}
+\DoxyCodeLine{system\_info: n\_threads = 4 / 10 | AVX2 = 0 | AVX512 = 0 | NEON = 1 | FP16\_VA = 1 | WASM\_SIMD = 0 | BLAS = 1 |}
+\DoxyCodeLine{}
+\DoxyCodeLine{main: processing \textcolor{stringliteral}{'./samples/jfk.wav'} (176000 samples, 11.0 sec), 4 threads, 1 processors, lang = en, task = transcribe, timestamps = 1 ...}
+\DoxyCodeLine{}
+\DoxyCodeLine{[00:00:00.000 -\/-\/> 00:00:00.320]  }
+\DoxyCodeLine{[00:00:00.320 -\/-\/> 00:00:00.370]   And}
+\DoxyCodeLine{[00:00:00.370 -\/-\/> 00:00:00.690]   so}
+\DoxyCodeLine{[00:00:00.690 -\/-\/> 00:00:00.850]   my}
+\DoxyCodeLine{[00:00:00.850 -\/-\/> 00:00:01.590]   fellow}
+\DoxyCodeLine{[00:00:01.590 -\/-\/> 00:00:02.850]   Americans}
+\DoxyCodeLine{[00:00:02.850 -\/-\/> 00:00:03.300]  ,}
+\DoxyCodeLine{[00:00:03.300 -\/-\/> 00:00:04.140]   ask}
+\DoxyCodeLine{[00:00:04.140 -\/-\/> 00:00:04.990]   not}
+\DoxyCodeLine{[00:00:04.990 -\/-\/> 00:00:05.410]   what}
+\DoxyCodeLine{[00:00:05.410 -\/-\/> 00:00:05.660]   your}
+\DoxyCodeLine{[00:00:05.660 -\/-\/> 00:00:06.260]   country}
+\DoxyCodeLine{[00:00:06.260 -\/-\/> 00:00:06.600]   can}
+\DoxyCodeLine{[00:00:06.600 -\/-\/> 00:00:06.840]   \textcolor{keywordflow}{do}}
+\DoxyCodeLine{[00:00:06.840 -\/-\/> 00:00:07.010]   \textcolor{keywordflow}{for}}
+\DoxyCodeLine{[00:00:07.010 -\/-\/> 00:00:08.170]   you}
+\DoxyCodeLine{[00:00:08.170 -\/-\/> 00:00:08.190]  ,}
+\DoxyCodeLine{[00:00:08.190 -\/-\/> 00:00:08.430]   ask}
+\DoxyCodeLine{[00:00:08.430 -\/-\/> 00:00:08.910]   what}
+\DoxyCodeLine{[00:00:08.910 -\/-\/> 00:00:09.040]   you}
+\DoxyCodeLine{[00:00:09.040 -\/-\/> 00:00:09.320]   can}
+\DoxyCodeLine{[00:00:09.320 -\/-\/> 00:00:09.440]   \textcolor{keywordflow}{do}}
+\DoxyCodeLine{[00:00:09.440 -\/-\/> 00:00:09.760]   \textcolor{keywordflow}{for}}
+\DoxyCodeLine{[00:00:09.760 -\/-\/> 00:00:10.020]   your}
+\DoxyCodeLine{[00:00:10.020 -\/-\/> 00:00:10.510]   country}
+\DoxyCodeLine{[00:00:10.510 -\/-\/> 00:00:11.000]  .}
+
+\end{DoxyCode}
+\hypertarget{md_WHISPER_README_autotoc_md52}{}\doxysection{Karaoke-\/style movie generation (experimental)}\label{md_WHISPER_README_autotoc_md52}
+The \href{examples/main}{\texttt{ main}} example provides support for output of karaoke-\/style movies, where the currently pronounced word is highlighted. Use the {\ttfamily -\/wts} argument and run the generated bash script. This requires to have {\ttfamily ffmpeg} installed.
+
+Here are a few $\ast$\char`\"{}typical\char`\"{}$\ast$ examples\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{./main -\/m ./models/ggml-\/base.en.bin -\/f ./samples/jfk.wav -\/owts}
+\DoxyCodeLine{source ./samples/jfk.wav.wts}
+\DoxyCodeLine{ffplay ./samples/jfk.wav.mp4}
+
+\end{DoxyCode}
+
+
+\href{https://user-images.githubusercontent.com/1991296/199337465-dbee4b5e-9aeb-48a3-b1c6-323ac4db5b2c.mp4}{\texttt{ https\+://user-\/images.\+githubusercontent.\+com/1991296/199337465-\/dbee4b5e-\/9aeb-\/48a3-\/b1c6-\/323ac4db5b2c.\+mp4}}
+
+\DoxyHorRuler{0}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{./main -\/m ./models/ggml-\/base.en.bin -\/f ./samples/mm0.wav -\/owts}
+\DoxyCodeLine{source ./samples/mm0.wav.wts}
+\DoxyCodeLine{ffplay ./samples/mm0.wav.mp4}
+
+\end{DoxyCode}
+
+
+\href{https://user-images.githubusercontent.com/1991296/199337504-cc8fd233-0cb7-4920-95f9-4227de3570aa.mp4}{\texttt{ https\+://user-\/images.\+githubusercontent.\+com/1991296/199337504-\/cc8fd233-\/0cb7-\/4920-\/95f9-\/4227de3570aa.\+mp4}}
+
+\DoxyHorRuler{0}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{./main -\/m ./models/ggml-\/base.en.bin -\/f ./samples/gb0.wav -\/owts}
+\DoxyCodeLine{source ./samples/gb0.wav.wts}
+\DoxyCodeLine{ffplay ./samples/gb0.wav.mp4}
+
+\end{DoxyCode}
+
+
+\href{https://user-images.githubusercontent.com/1991296/199337538-b7b0c7a3-2753-4a88-a0cd-f28a317987ba.mp4}{\texttt{ https\+://user-\/images.\+githubusercontent.\+com/1991296/199337538-\/b7b0c7a3-\/2753-\/4a88-\/a0cd-\/f28a317987ba.\+mp4}}
+
+\DoxyHorRuler{0}
+\hypertarget{md_WHISPER_README_autotoc_md56}{}\doxysection{Benchmarks}\label{md_WHISPER_README_autotoc_md56}
+In order to have an objective comparison of the performance of the inference across different system configurations, use the \href{examples/bench}{\texttt{ bench}} tool. The tool simply runs the Encoder part of the model and prints how much time it took to execute it. The results are summarized in the following Github issue\+:
+
+\href{https://github.com/ggerganov/whisper.cpp/issues/89}{\texttt{ Benchmark results}}\hypertarget{md_WHISPER_README_autotoc_md57}{}\doxysection{ggml format}\label{md_WHISPER_README_autotoc_md57}
+The original models are converted to a custom binary format. This allows to pack everything needed into a single file\+:
+
+
+\begin{DoxyItemize}
+\item model parameters
+\item mel filters
+\item vocabulary
+\item weights
+\end{DoxyItemize}
+
+You can download the converted models using the \href{models/download-ggml-model.sh}{\texttt{ models/download-\/ggml-\/model.\+sh}} script or manually from here\+:
+
+
+\begin{DoxyItemize}
+\item \href{https://huggingface.co/datasets/ggerganov/whisper.cpp}{\texttt{ https\+://huggingface.\+co/datasets/ggerganov/whisper.\+cpp}}
+\item \href{https://ggml.ggerganov.com}{\texttt{ https\+://ggml.\+ggerganov.\+com}}
+\end{DoxyItemize}
+
+For more details, see the conversion script \href{models/convert-pt-to-ggml.py}{\texttt{ models/convert-\/pt-\/to-\/ggml.\+py}} or the README in \mbox{[}models\mbox{]}(models).\hypertarget{md_WHISPER_README_autotoc_md58}{}\doxysection{$<$a href=\char`\"{}https\+://github.\+com/ggerganov/whisper.\+cpp/discussions/categories/bindings\char`\"{}$>$\+Bindings$<$/a$>$}\label{md_WHISPER_README_autotoc_md58}
+
+\begin{DoxyItemize}
+\item \mbox{[}X\mbox{]} Rust\+: \href{https://github.com/tazz4843/whisper-rs}{\texttt{ tazz4843/whisper-\/rs}} $\vert$ \href{https://github.com/ggerganov/whisper.cpp/discussions/310}{\texttt{ \#310}}
+\item \mbox{[}X\mbox{]} Javascript\+: \href{bindings/javascript}{\texttt{ bindings/javascript}} $\vert$ \href{https://github.com/ggerganov/whisper.cpp/discussions/309}{\texttt{ \#309}}
+\item \mbox{[}X\mbox{]} Go\+: \href{bindings/go}{\texttt{ bindings/go}} $\vert$ \href{https://github.com/ggerganov/whisper.cpp/discussions/312}{\texttt{ \#312}}
+\item \mbox{[}X\mbox{]} Ruby\+: \href{bindings/ruby}{\texttt{ bindings/ruby}} $\vert$ \href{https://github.com/ggerganov/whisper.cpp/discussions/507}{\texttt{ \#507}}
+\item \mbox{[}X\mbox{]} Objective-\/C / Swift\+: \href{https://github.com/ggerganov/whisper.spm}{\texttt{ ggerganov/whisper.\+spm}} $\vert$ \href{https://github.com/ggerganov/whisper.cpp/discussions/313}{\texttt{ \#313}}
+\item \mbox{[}X\mbox{]} .NET\+: $\vert$ \href{https://github.com/ggerganov/whisper.cpp/discussions/422}{\texttt{ \#422}}
+\begin{DoxyItemize}
+\item \href{https://github.com/sandrohanea/whisper.net}{\texttt{ sandrohanea/whisper.\+net}}
+\item \href{https://github.com/NickDarvey/whisper}{\texttt{ Nick\+Darvey/whisper}}
+\end{DoxyItemize}
+\item \mbox{[}X\mbox{]} Python\+: $\vert$ \href{https://github.com/ggerganov/whisper.cpp/issues/9}{\texttt{ \#9}}
+\begin{DoxyItemize}
+\item \href{https://github.com/stlukey/whispercpp.py}{\texttt{ stlukey/whispercpp.\+py}} (Cython)
+\item \href{https://github.com/aarnphm/whispercpp}{\texttt{ aarnphm/whispercpp}} (Pybind11)
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_WHISPER_README_autotoc_md59}{}\doxysection{Examples}\label{md_WHISPER_README_autotoc_md59}
+There are various examples of using the library for different projects in the \mbox{[}examples\mbox{]}(examples) folder. Some of the examples are even ported to run in the browser using Web\+Assembly. Check them out!
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Example   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Web   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Description    }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Example   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Web   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Description    }\\\cline{1-3}
+\endhead
+\href{examples/main}{\texttt{ main}}   &\href{examples/whisper.wasm}{\texttt{ whisper.\+wasm}}   &Tool for translating and transcribing audio using Whisper    \\\cline{1-3}
+\href{examples/bench}{\texttt{ bench}}   &\href{examples/bench.wasm}{\texttt{ bench.\+wasm}}   &Benchmark the performance of Whisper on your machine    \\\cline{1-3}
+\href{examples/stream}{\texttt{ stream}}   &\href{examples/stream.wasm}{\texttt{ stream.\+wasm}}   &Real-\/time transcription of raw microphone capture    \\\cline{1-3}
+\href{examples/command}{\texttt{ command}}   &\href{examples/command.wasm}{\texttt{ command.\+wasm}}   &Basic voice assistant example for receiving voice commands from the mic    \\\cline{1-3}
+\href{examples/talk}{\texttt{ talk}}   &\href{examples/talk.wasm}{\texttt{ talk.\+wasm}}   &Talk with a GPT-\/2 bot    \\\cline{1-3}
+\href{examples/whisper.objc}{\texttt{ whisper.\+objc}}   &&i\+OS mobile application using whisper.\+cpp    \\\cline{1-3}
+\href{examples/whisper.swiftui}{\texttt{ whisper.\+swiftui}}   &&Swift\+UI i\+OS / mac\+OS application using whisper.\+cpp    \\\cline{1-3}
+\href{examples/whisper.android}{\texttt{ whisper.\+android}}   &&Android mobile application using whisper.\+cpp    \\\cline{1-3}
+\href{examples/whisper.nvim}{\texttt{ whisper.\+nvim}}   &&Speech-\/to-\/text plugin for Neovim    \\\cline{1-3}
+\href{examples/generate-karaoke.sh}{\texttt{ generate-\/karaoke.\+sh}}   &&Helper script to easily \href{https://youtu.be/uj7hVta4blM}{\texttt{ generate a karaoke video}} of raw audio capture    \\\cline{1-3}
+\href{examples/livestream.sh}{\texttt{ livestream.\+sh}}   &&\href{https://github.com/ggerganov/whisper.cpp/issues/185}{\texttt{ Livestream audio transcription}}    \\\cline{1-3}
+\href{examples/yt-wsp.sh}{\texttt{ yt-\/wsp.\+sh}}   &&Download + transcribe and/or translate any VOD \href{https://gist.github.com/DaniruKun/96f763ec1a037cc92fe1a059b643b818}{\texttt{ (original)}}   \\\cline{1-3}
+\end{longtabu}
+\hypertarget{md_WHISPER_README_autotoc_md60}{}\doxysection{$<$a href=\char`\"{}https\+://github.\+com/ggerganov/whisper.\+cpp/discussions\char`\"{}$>$\+Discussions$<$/a$>$}\label{md_WHISPER_README_autotoc_md60}
+If you have any kind of feedback about this project feel free to use the Discussions section and open a new topic. You can use the \href{https://github.com/ggerganov/whisper.cpp/discussions/categories/show-and-tell}{\texttt{ Show and tell}} category to share your own projects that use {\ttfamily whisper.\+cpp}. If you have a question, make sure to check the \href{https://github.com/ggerganov/whisper.cpp/discussions/126}{\texttt{ Frequently asked questions (\#126)}} discussion. 

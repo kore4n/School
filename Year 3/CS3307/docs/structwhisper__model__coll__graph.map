@@ -1,0 +1,9 @@
+<map id="whisper_model" name="whisper_model">
+<area shape="rect" id="node1" title=" " alt="" coords="231,377,353,404"/>
+<area shape="rect" id="node2" href="$structwhisper__filters.html" title=" " alt="" coords="5,125,123,152"/>
+<area shape="rect" id="node3" href="$structggml__tensor.html" title=" " alt="" coords="147,125,250,152"/>
+<area shape="rect" id="node4" href="$structggml__context.html" title=" " alt="" coords="331,125,442,152"/>
+<area shape="rect" id="node5" href="$structggml__scratch.html" title=" " alt="" coords="271,5,380,32"/>
+<area shape="rect" id="node6" href="$structggml__object.html" title=" " alt="" coords="405,5,507,32"/>
+<area shape="rect" id="node7" href="$structwhisper__hparams.html" title=" " alt="" coords="466,125,603,152"/>
+</map>

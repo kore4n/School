@@ -1,0 +1,6 @@
+<map id="ggml_compute_state" name="ggml_compute_state">
+<area shape="rect" id="node1" title=" " alt="" coords="160,127,319,153"/>
+<area shape="rect" id="node2" href="$structggml__compute__state__shared.html" title=" " alt="" coords="5,14,164,55"/>
+<area shape="rect" id="node3" href="$structggml__tensor.html" title=" " alt="" coords="188,21,291,48"/>
+<area shape="rect" id="node4" href="$structggml__compute__params.html" title=" " alt="" coords="372,21,547,48"/>
+</map>

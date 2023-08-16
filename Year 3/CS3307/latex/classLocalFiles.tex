@@ -1,0 +1,101 @@
+\hypertarget{classLocalFiles}{}\doxysection{Local\+Files Class Reference}
+\label{classLocalFiles}\index{LocalFiles@{LocalFiles}}
+
+
+A class for managing local files.  
+
+
+
+
+{\ttfamily \#include $<$Local\+Files.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classLocalFiles_a6092b3647dcc195e1bf6e8559c8085e2}{Local\+Files}} ()
+\item 
+\mbox{\hyperlink{classLocalFiles_a3e633ccf4345d23ee4d10c3e5e41f63d}{$\sim$\+Local\+Files}} ()
+\item 
+void \mbox{\hyperlink{classLocalFiles_a20d4dacac24dc45babd4c5458c83cc69}{create\+File}} ()
+\begin{DoxyCompactList}\small\item\em Creates a new file and writes content to it This function prompts the user to enter a filename and the content to be written to the file. It then creates a new file with the given filename and writes the content to it. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLocalFiles_a59bca8a3a8c33c2176a1c3cebc195a9c}{update\+File}} ()
+\begin{DoxyCompactList}\small\item\em Updates an existing file with additional content. Prompts the user to enter the name of the file to update, and the content to append to the file. Opens the file in append mode, and writes the new content to the end of the file. Finally, closes the file and prints a success message. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLocalFiles_a3a93155c8498b601a7d20b91aa717987}{delete\+File}} ()
+\begin{DoxyCompactList}\small\item\em Deletes the file with the given filename. This function prompts the user to enter the filename of the file to delete. If the file exists, it is deleted; otherwise, an error message is displayed. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLocalFiles_affc5dd01b97ab2a1808a069a5252aa49}\label{classLocalFiles_affc5dd01b97ab2a1808a069a5252aa49}} 
+void \mbox{\hyperlink{classLocalFiles_affc5dd01b97ab2a1808a069a5252aa49}{view\+Files}} ()
+\begin{DoxyCompactList}\small\item\em Displays a list of files in the current working directory. This function opens the current working directory and iterates through each file, displaying the name of each regular file. If there is an error opening the directory, an error message will be displayed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class for managing local files. 
+
+This file represents the header for the \mbox{\hyperlink{classLocalFiles}{Local\+Files}} class \begin{DoxyAuthor}{Author}
+Shahzore Khan (251124330) 
+\end{DoxyAuthor}
+\begin{DoxySince}{Since}
+2023-\/03-\/14 
+\end{DoxySince}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classLocalFiles_a6092b3647dcc195e1bf6e8559c8085e2}\label{classLocalFiles_a6092b3647dcc195e1bf6e8559c8085e2}} 
+\index{LocalFiles@{LocalFiles}!LocalFiles@{LocalFiles}}
+\index{LocalFiles@{LocalFiles}!LocalFiles@{LocalFiles}}
+\doxysubsubsection{\texorpdfstring{LocalFiles()}{LocalFiles()}}
+{\footnotesize\ttfamily Local\+Files\+::\+Local\+Files (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+The constructor for the \mbox{\hyperlink{classLocalFiles}{Local\+Files}} class \mbox{\Hypertarget{classLocalFiles_a3e633ccf4345d23ee4d10c3e5e41f63d}\label{classLocalFiles_a3e633ccf4345d23ee4d10c3e5e41f63d}} 
+\index{LocalFiles@{LocalFiles}!````~LocalFiles@{$\sim$LocalFiles}}
+\index{````~LocalFiles@{$\sim$LocalFiles}!LocalFiles@{LocalFiles}}
+\doxysubsubsection{\texorpdfstring{$\sim$LocalFiles()}{~LocalFiles()}}
+{\footnotesize\ttfamily Local\+Files\+::$\sim$\+Local\+Files (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+The deconstructor for the \mbox{\hyperlink{classLocalFiles}{Local\+Files}} Class class 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classLocalFiles_a20d4dacac24dc45babd4c5458c83cc69}\label{classLocalFiles_a20d4dacac24dc45babd4c5458c83cc69}} 
+\index{LocalFiles@{LocalFiles}!createFile@{createFile}}
+\index{createFile@{createFile}!LocalFiles@{LocalFiles}}
+\doxysubsubsection{\texorpdfstring{createFile()}{createFile()}}
+{\footnotesize\ttfamily void Local\+Files\+::create\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Creates a new file and writes content to it This function prompts the user to enter a filename and the content to be written to the file. It then creates a new file with the given filename and writes the content to it. 
+
+\begin{DoxyReturn}{Returns}
+null 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classLocalFiles_a3a93155c8498b601a7d20b91aa717987}\label{classLocalFiles_a3a93155c8498b601a7d20b91aa717987}} 
+\index{LocalFiles@{LocalFiles}!deleteFile@{deleteFile}}
+\index{deleteFile@{deleteFile}!LocalFiles@{LocalFiles}}
+\doxysubsubsection{\texorpdfstring{deleteFile()}{deleteFile()}}
+{\footnotesize\ttfamily void Local\+Files\+::delete\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Deletes the file with the given filename. This function prompts the user to enter the filename of the file to delete. If the file exists, it is deleted; otherwise, an error message is displayed. 
+
+\begin{DoxyReturn}{Returns}
+null 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classLocalFiles_a59bca8a3a8c33c2176a1c3cebc195a9c}\label{classLocalFiles_a59bca8a3a8c33c2176a1c3cebc195a9c}} 
+\index{LocalFiles@{LocalFiles}!updateFile@{updateFile}}
+\index{updateFile@{updateFile}!LocalFiles@{LocalFiles}}
+\doxysubsubsection{\texorpdfstring{updateFile()}{updateFile()}}
+{\footnotesize\ttfamily void Local\+Files\+::update\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Updates an existing file with additional content. Prompts the user to enter the name of the file to update, and the content to append to the file. Opens the file in append mode, and writes the new content to the end of the file. Finally, closes the file and prints a success message. 
+
+\begin{DoxyReturn}{Returns}
+null 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Local\+Files.\+h\item 
+Local\+Files.\+cpp\end{DoxyCompactItemize}

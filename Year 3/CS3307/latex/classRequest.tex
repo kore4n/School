@@ -1,0 +1,208 @@
+\hypertarget{classRequest}{}\doxysection{Request Class Reference}
+\label{classRequest}\index{Request@{Request}}
+
+
+Collaboration diagram for Request\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=166pt]{classRequest__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classRequest_a2557abcd27fa802b5c71af04bf8f79c1}{Request}} (std\+::string request\+URL)
+\item 
+\mbox{\hyperlink{classRequest_a7e1098e7f63084c8395472211d38bd5a}{Request}} (std\+::string request\+URL, std\+::string token, char $\ast$info)
+\item 
+\mbox{\hyperlink{classRequest_aee3d26025493e34a1550d44231c33a55}{Request}} (std\+::string request\+URL, std\+::string token, char $\ast$info, std\+::string file\+Name)
+\item 
+\mbox{\hyperlink{classRequest_afd1e82e0a1477bda67b7fd56829c3ab8}{Request}} (const \mbox{\hyperlink{classRequest}{Request}} \&old\+Request)
+\item 
+\mbox{\hyperlink{classRequest_a4d57c725686701f773eb3630630a7ea2}{$\sim$\+Request}} ()
+\item 
+bool \mbox{\hyperlink{classRequest_afdd4c7bdc380667a26e8176c0817c38e}{execute}} ()
+\item 
+std\+::string \mbox{\hyperlink{classRequest_a3e47bdf7ba5fcc7674626f609e843bdc}{result}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static size\+\_\+t \mbox{\hyperlink{classRequest_a10d0a983e761bf8814ecbf21e4256514}{Write\+Memory\+Callback}} (void $\ast$contents, size\+\_\+t size, size\+\_\+t nmemb, void $\ast$userp)
+\item 
+static size\+\_\+t \mbox{\hyperlink{classRequest_a8c25e4eacf585904a7117dae320508b6}{write\+\_\+to\+\_\+file}} (void $\ast$contents, size\+\_\+t size, size\+\_\+t nmemb, FILE $\ast$userp)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classRequest_a1df4c1a995e512fb06ad825c24d3fdf8}\label{classRequest_a1df4c1a995e512fb06ad825c24d3fdf8}} 
+CURL $\ast$ {\bfseries curl\+Handle}
+\item 
+\mbox{\Hypertarget{classRequest_aa9608c95e5c45c32c335c477683de325}\label{classRequest_aa9608c95e5c45c32c335c477683de325}} 
+CURLcode {\bfseries res}
+\item 
+\mbox{\Hypertarget{classRequest_a004d6705f0cec119dab7aa26fa7e38e2}\label{classRequest_a004d6705f0cec119dab7aa26fa7e38e2}} 
+\mbox{\hyperlink{structMemoryStruct}{Memory\+Struct}} {\bfseries chunk}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classRequest_a2557abcd27fa802b5c71af04bf8f79c1}\label{classRequest_a2557abcd27fa802b5c71af04bf8f79c1}} 
+\index{Request@{Request}!Request@{Request}}
+\index{Request@{Request}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{Request()}{Request()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily Request\+::\+Request (\begin{DoxyParamCaption}\item[{std\+::string}]{request\+URL }\end{DoxyParamCaption})}
+
+\mbox{\hyperlink{classRequest}{Request}} Default constructor for \mbox{\hyperlink{classRequest}{Request}} class 
+\begin{DoxyParams}{Parameters}
+{\em request\+URL} & The URL where the JSON is stored \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+null 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRequest_a7e1098e7f63084c8395472211d38bd5a}\label{classRequest_a7e1098e7f63084c8395472211d38bd5a}} 
+\index{Request@{Request}!Request@{Request}}
+\index{Request@{Request}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{Request()}{Request()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily Request\+::\+Request (\begin{DoxyParamCaption}\item[{std\+::string}]{request\+URL,  }\item[{std\+::string}]{token,  }\item[{char $\ast$}]{info }\end{DoxyParamCaption})}
+
+\mbox{\hyperlink{classRequest}{Request}} Constructor for \mbox{\hyperlink{classRequest}{Request}} class, with additional bearer token for authorization. Mainly used for Chat\+GPT. 
+\begin{DoxyParams}{Parameters}
+{\em request\+URL} & The URL where the JSON is stored \\
+\hline
+{\em token} & The token used for the authorization header \\
+\hline
+{\em info} & The information the user wants to ask Chat\+GPT. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+null 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRequest_aee3d26025493e34a1550d44231c33a55}\label{classRequest_aee3d26025493e34a1550d44231c33a55}} 
+\index{Request@{Request}!Request@{Request}}
+\index{Request@{Request}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{Request()}{Request()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily Request\+::\+Request (\begin{DoxyParamCaption}\item[{std\+::string}]{request\+URL,  }\item[{std\+::string}]{token,  }\item[{char $\ast$}]{info,  }\item[{std\+::string}]{file\+Name }\end{DoxyParamCaption})}
+
+\mbox{\hyperlink{classRequest}{Request}} Constructor for \mbox{\hyperlink{classRequest}{Request}} class, with additional bearer token for authorization. This method is used for elven\+Labs which is the API used to generate custom voices and .mp3 file 
+\begin{DoxyParams}{Parameters}
+{\em request\+URL} & The URL where the JSON is stored \\
+\hline
+{\em token} & The token used for the authorization header \\
+\hline
+{\em info} & The information the user wants to ask Chat\+GPT. \\
+\hline
+{\em file\+Name} & the name of the .mp3 file that will be created. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+null 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRequest_afd1e82e0a1477bda67b7fd56829c3ab8}\label{classRequest_afd1e82e0a1477bda67b7fd56829c3ab8}} 
+\index{Request@{Request}!Request@{Request}}
+\index{Request@{Request}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{Request()}{Request()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily Request\+::\+Request (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classRequest}{Request}} \&}]{old\+Request }\end{DoxyParamCaption})}
+
+\mbox{\hyperlink{classRequest}{Request}} Copy constructor for \mbox{\hyperlink{classRequest}{Request}} class 
+\begin{DoxyParams}{Parameters}
+{\em \mbox{\hyperlink{classRequest}{Request}}} & The \mbox{\hyperlink{classRequest}{Request}} class to be copied onto the new one \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+null 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRequest_a4d57c725686701f773eb3630630a7ea2}\label{classRequest_a4d57c725686701f773eb3630630a7ea2}} 
+\index{Request@{Request}!````~Request@{$\sim$Request}}
+\index{````~Request@{$\sim$Request}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{$\sim$Request()}{~Request()}}
+{\footnotesize\ttfamily Request\+::$\sim$\+Request (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+$\sim$\+Request Destructor for \mbox{\hyperlink{classRequest}{Request}} class 
+\begin{DoxyParams}{Parameters}
+{\em null} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+null 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classRequest_afdd4c7bdc380667a26e8176c0817c38e}\label{classRequest_afdd4c7bdc380667a26e8176c0817c38e}} 
+\index{Request@{Request}!execute@{execute}}
+\index{execute@{execute}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily bool Request\+::execute (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+execute Method used to retrieve the document from the URL 
+\begin{DoxyParams}{Parameters}
+{\em null} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A boolean value that represents if the retrieval was successful or not 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRequest_a3e47bdf7ba5fcc7674626f609e843bdc}\label{classRequest_a3e47bdf7ba5fcc7674626f609e843bdc}} 
+\index{Request@{Request}!result@{result}}
+\index{result@{result}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{result()}{result()}}
+{\footnotesize\ttfamily std\+::string Request\+::result (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+result Method used to return the document 
+\begin{DoxyParams}{Parameters}
+{\em null} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A string representation of the document 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRequest_a8c25e4eacf585904a7117dae320508b6}\label{classRequest_a8c25e4eacf585904a7117dae320508b6}} 
+\index{Request@{Request}!write\_to\_file@{write\_to\_file}}
+\index{write\_to\_file@{write\_to\_file}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{write\_to\_file()}{write\_to\_file()}}
+{\footnotesize\ttfamily size\+\_\+t Request\+::write\+\_\+to\+\_\+file (\begin{DoxyParamCaption}\item[{void $\ast$}]{contents,  }\item[{size\+\_\+t}]{size,  }\item[{size\+\_\+t}]{nmemb,  }\item[{FILE $\ast$}]{stream }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+When called writes the content 
+\begin{DoxyParams}{Parameters}
+{\em contents} & The JSON content \\
+\hline
+{\em size} & The size of the buffer \\
+\hline
+{\em nmemb} & The size of each element per buffer \\
+\hline
+{\em stream} & a pointer to the file that it should be written to \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Size of the data 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRequest_a10d0a983e761bf8814ecbf21e4256514}\label{classRequest_a10d0a983e761bf8814ecbf21e4256514}} 
+\index{Request@{Request}!WriteMemoryCallback@{WriteMemoryCallback}}
+\index{WriteMemoryCallback@{WriteMemoryCallback}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{WriteMemoryCallback()}{WriteMemoryCallback()}}
+{\footnotesize\ttfamily size\+\_\+t Request\+::\+Write\+Memory\+Callback (\begin{DoxyParamCaption}\item[{void $\ast$}]{contents,  }\item[{size\+\_\+t}]{size,  }\item[{size\+\_\+t}]{nmemb,  }\item[{void $\ast$}]{userp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Write\+Memory\+Callback Helper method used to write JSON into memory 
+\begin{DoxyParams}{Parameters}
+{\em contents} & The JSON content \\
+\hline
+{\em size} & The size of the buffer \\
+\hline
+{\em nmemb} & The size of each eleemnt per buffer \\
+\hline
+{\em userp} & Pointer to the data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Size of the the data 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+request.\+h\item 
+request.\+cpp\end{DoxyCompactItemize}
