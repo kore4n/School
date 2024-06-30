@@ -38,3 +38,16 @@ Individual Assignment   - 95
 Final Submission        - 88
 
 #### Final Grade: 89
+
+# Year 4
+### 3357 - Networks I
+
+#### Final Grade: 83
+
+### 3388 - Computer Graphics I
+
+#### Final Grade: 95
+
+### 3340 - Analysis of Algorithms I
+
+#### Final Grade: 86
