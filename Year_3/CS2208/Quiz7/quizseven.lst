@@ -1,0 +1,55 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             quizseven, CODE, READONLY
+    2 00000000                 ENTRY
+    3 00000000 E3A00009        MOV              R0, #9
+    4 00000004 E3A01003        MOV              R1, #3
+    5 00000008 E0811180 
+                       repeat  ADD              R1,R1,R0,LSL#3
+    6 0000000C E3110001        TST              R1,#1
+    7 00000010 12400003        SUBNE            R0,#3
+    8 00000014 02400009        SUBEQ            R0,#9
+    9 00000018 E3500000        CMP              R0,#0
+   10 0000001C CAFFFFF9        BGT              repeat
+   11 00000020 EAFFFFFE 
+                       halt    B                halt
+   12 00000024                 END
+Command Line: --debug --xref --bi --apcs=interwork --depend=.\quizseven.d -o.\q
+uizseven.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include --predefine="__EV
+AL SETA 1" --list=.\quizseven.lst quizseven.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+halt 00000020
+
+Symbol: halt
+   Definitions
+      At line 11 in file quizseven.s
+   Uses
+      At line 11 in file quizseven.s
+Comment: halt used once
+quizseven 00000000
+
+Symbol: quizseven
+   Definitions
+      At line 1 in file quizseven.s
+   Uses
+      None
+Comment: quizseven unused
+repeat 00000008
+
+Symbol: repeat
+   Definitions
+      At line 5 in file quizseven.s
+   Uses
+      At line 10 in file quizseven.s
+Comment: repeat used once
+3 symbols
+334 symbols in table

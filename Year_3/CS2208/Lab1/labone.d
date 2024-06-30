@@ -1,0 +1,1 @@
+.\labone.o: LabOne.s

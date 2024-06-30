@@ -1,0 +1,5 @@
+--cpu ARM7TDMI
+".\assembly_lab_7_online_factorial.o"
+--ro-base 0x00000000 --entry 0x00000000 --rw-base 0x00000000 --strict --summary_stderr --info summarysizes --map --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\LabSeven.map" -o .\LabSeven.axf

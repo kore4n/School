@@ -19,6 +19,10 @@ Implementation and Delivery - 100
 #### Final Grade: 88
 
 # Year 3
+### 2208 - Introduction to Computer Organization and Architecture
+
+#### Final Grade: 84
+
 ### 3305 - Operating Systems
 Assignment 1 - 100
 

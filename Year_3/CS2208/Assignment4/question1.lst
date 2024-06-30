@@ -1,0 +1,408 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             question1, CODE, READONLY
+    2 00000000                 ENTRY
+    3 00000000         
+    4 00000000 00000000 
+                       Zero    EQU              0           ;to check if last d
+                                                            igit is zero
+    5 00000000 00000001 
+                       MulCon  EQU              1           ;multiplication con
+                                                            stant
+    6 00000000 00000000 
+                       FirstI  EQU              0           ;first index for fi
+                                                            rst digit
+    7 00000000 00000001 
+                       SecondI EQU              1           ;second index for s
+                                                            econd digit
+    8 00000000 00000002 
+                       Diff    EQU              2           ;to increment count
+                                                            er to go to next di
+                                                            git
+    9 00000000 0000000C 
+                       MaxOne  EQU              12          ;when to stop count
+                                                            ing for first group
+                                                             of digits
+   10 00000000 0000000B 
+                       MaxTwo  EQU              11          ;when to stop count
+                                                            ing for second grou
+                                                            p of digits
+   11 00000000 0000000A 
+                       Divisor EQU              10          ;for repeated subtr
+                                                            action to see if an
+                                                            swer is divisible b
+                                                            y 10
+   12 00000000 00000030 
+                       RemAsci EQU              0x30        ;to subtract from a
+                                                            scii code to get de
+                                                            cimal value
+   13 00000000 0000000B 
+                       LastDig EQU              11          ;memory spaces afte
+                                                            r first digit in a 
+                                                            string to find last
+                                                             digit
+   14 00000000 00000001 
+                       FinalS  EQU              1           ;success value to p
+                                                            ut into r0
+   15 00000000 00000002 
+                       FinalF  EQU              2           ;fail value to put 
+                                                            into r0
+   16 00000000         
+   17 00000000 E3A00000        MOV              r0, #FirstI ;initialize r0 as a
+                                                            n accumulator
+   18 00000004 E28F1068        ADR              r1, UPC     ;point r1 to UPC's 
+                                                            address to access l
+                                                            ater
+   19 00000008         
+   20 00000008 E7D12000 
+                       LoopOne LDRB             r2, [r1, r0] ;move to the new d
+                                                            igit
+   21 0000000C E2422030        SUB              r2, r2, #RemAsci
+   22 00000010 E0833002        ADD              r3, r3, r2  ;add current digit 
+
+
+
+ARM Macro Assembler    Page 2 
+
+
+                                                            to first sum at r3
+   23 00000014 E2800002        ADD              r0, r0, #Diff ;increment counte
+                                                            r by 2 to count the
+                                                             second next digit
+   24 00000018 E350000C        CMP              r0, #MaxOne ;check if all secon
+                                                            d group of 5 digits
+                                                             are counted
+   25 0000001C 1AFFFFF9        BNE              LoopOne     ;loop again if not 
+                                                            all first group of 
+                                                            digits have been co
+                                                            unted
+   26 00000020         
+   27 00000020 E3A00001        MOV              r0, #SecondI ;initialize to 1 t
+                                                            o use odd digits to
+                                                             count the second g
+                                                            roup of 5 digits
+   28 00000024         
+   29 00000024 E7D12000 
+                       LoopTwo LDRB             r2, [r1, r0] ;move to the new d
+                                                            igit
+   30 00000028 E2422030        SUB              r2, r2, #RemAsci ;subtract to t
+                                                            ransform from ASCII
+                                                             to digit
+   31 0000002C E0844002        ADD              r4, r4, r2  ;add current digit 
+                                                            to second sum at r4
+                                                            
+   32 00000030 E2800002        ADD              r0, r0, #Diff ;increment counte
+                                                            r by 2 to count the
+                                                             second next digit
+   33 00000034 E350000B        CMP              r0, #MaxTwo ;check if all first
+                                                             group of 6 digits 
+                                                            are counted
+   34 00000038 1AFFFFF9        BNE              LoopTwo     ;loop again if not 
+                                                            all second group of
+                                                             digits have been c
+                                                            ounted
+   35 0000003C         
+   36 0000003C E0833083        ADD              r3, r3, LSL #MulCon ;multiply f
+                                                            irst group by 3
+   37 00000040 E0833004        ADD              r3, r4      ;add 3x the first g
+                                                            roup and the second
+                                                             group and store su
+                                                            m in r3
+   38 00000044         
+   39 00000044 E5D1400B        LDRB             r4, [r1, #LastDig] ;store check
+                                                             digit in r4
+   40 00000048 E2444030        SUB              r4, r4, #RemAsci ;subtract to t
+                                                            ransform from ASCII
+                                                             to digit
+   41 0000004C E0833004        ADD              r3, r4      ;add check digit to
+                                                             r3
+   42 00000050         
+   43 00000050 E3530000        CMP              r3, #Zero   ;compare to see if 
+                                                            all already 0s
+   44 00000054 0A000004        BEQ              Success     ;succeed if already
+                                                             all 0s
+   45 00000058         
+   46 00000058 E253300A 
+                       LoopThr SUBS             r3, r3, #Divisor ;divide by 10 
+
+
+
+ARM Macro Assembler    Page 3 
+
+
+                                                            until 0 or negative
+                                                            
+   47 0000005C 0A000002        BEQ              Success     ;branch to Success 
+                                                            if zero
+   48 00000060 5AFFFFFC        BPL              LoopThr     ;keep looping until
+                                                             reach 0 or a negat
+                                                            ive number
+   49 00000064 E3A00002        MOV              r0, #FinalF ;number went into n
+                                                            egatives - then not
+                                                             divisible by zero,
+                                                             not a valid UPC Co
+                                                            de. failure message
+                                                            
+   50 00000068 EA000000        b                Endless     ;not valid UPC code
+                                                            , skip success and 
+                                                            go to endless loop
+   51 0000006C         
+   52 0000006C E3A00001 
+                       Success MOV              r0, #FinalS ;success message
+   53 00000070         
+   54 00000070 EAFFFFFE 
+                       Endless B                Endless
+   55 00000074         
+   56 00000074 30 31 33 
+              38 30 30 
+              31 35 30 
+              37 33 38 UPC     DCB              "013800150738" 
+                                                            ;correct UPC string
+                                                            
+   57 00000080 30 36 30 
+              33 38 33 
+              37 35 35 
+              35 37 37 UPC2    DCB              "060383755577" 
+                                                            ;correct UPC string
+                                                            
+   58 0000008C 30 36 35 
+              36 33 33 
+              34 35 34 
+              37 31 32 UPC3    DCB              "065633454712" ;correct UPC str
+                                                            ing 
+   59 00000098 30 30 30 
+              30 30 30 
+              30 30 30 
+              30 30 30 UPC4    DCB              "000000000000" 
+                                                            ;correct UPC string
+                                                            
+   60 000000A4 30 31 33 
+              38 30 30 
+              31 35 30 
+              37 33 39 UPC5    DCB              "013800150739" ;incorrect UPC s
+                                                            tring
+   61 000000B0         
+   62 000000B0                 END
+Command Line: --debug --xref --bi --apcs=interwork --depend=.\question1.d -o.\q
+uestion1.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include --predefine="__EV
+AL SETA 1" --list=.\question1.lst question1.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+Endless 00000070
+
+Symbol: Endless
+   Definitions
+      At line 54 in file question1.s
+   Uses
+      At line 50 in file question1.s
+      At line 54 in file question1.s
+
+LoopOne 00000008
+
+Symbol: LoopOne
+   Definitions
+      At line 20 in file question1.s
+   Uses
+      At line 25 in file question1.s
+Comment: LoopOne used once
+LoopThr 00000058
+
+Symbol: LoopThr
+   Definitions
+      At line 46 in file question1.s
+   Uses
+      At line 48 in file question1.s
+Comment: LoopThr used once
+LoopTwo 00000024
+
+Symbol: LoopTwo
+   Definitions
+      At line 29 in file question1.s
+   Uses
+      At line 34 in file question1.s
+Comment: LoopTwo used once
+Success 0000006C
+
+Symbol: Success
+   Definitions
+      At line 52 in file question1.s
+   Uses
+      At line 44 in file question1.s
+      At line 47 in file question1.s
+
+UPC 00000074
+
+Symbol: UPC
+   Definitions
+      At line 56 in file question1.s
+   Uses
+      At line 18 in file question1.s
+Comment: UPC used once
+UPC2 00000080
+
+Symbol: UPC2
+   Definitions
+      At line 57 in file question1.s
+   Uses
+      None
+Comment: UPC2 unused
+UPC3 0000008C
+
+
+
+ARM Macro Assembler    Page 2 Alphabetic symbol ordering
+Relocatable symbols
+
+
+Symbol: UPC3
+   Definitions
+      At line 58 in file question1.s
+   Uses
+      None
+Comment: UPC3 unused
+UPC4 00000098
+
+Symbol: UPC4
+   Definitions
+      At line 59 in file question1.s
+   Uses
+      None
+Comment: UPC4 unused
+UPC5 000000A4
+
+Symbol: UPC5
+   Definitions
+      At line 60 in file question1.s
+   Uses
+      None
+Comment: UPC5 unused
+question1 00000000
+
+Symbol: question1
+   Definitions
+      At line 1 in file question1.s
+   Uses
+      None
+Comment: question1 unused
+11 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Absolute symbols
+
+Diff 00000002
+
+Symbol: Diff
+   Definitions
+      At line 8 in file question1.s
+   Uses
+      At line 23 in file question1.s
+      At line 32 in file question1.s
+
+Divisor 0000000A
+
+Symbol: Divisor
+   Definitions
+      At line 11 in file question1.s
+   Uses
+      At line 46 in file question1.s
+Comment: Divisor used once
+FinalF 00000002
+
+Symbol: FinalF
+   Definitions
+      At line 15 in file question1.s
+   Uses
+      At line 49 in file question1.s
+Comment: FinalF used once
+FinalS 00000001
+
+Symbol: FinalS
+   Definitions
+      At line 14 in file question1.s
+   Uses
+      At line 52 in file question1.s
+Comment: FinalS used once
+FirstI 00000000
+
+Symbol: FirstI
+   Definitions
+      At line 6 in file question1.s
+   Uses
+      At line 17 in file question1.s
+Comment: FirstI used once
+LastDig 0000000B
+
+Symbol: LastDig
+   Definitions
+      At line 13 in file question1.s
+   Uses
+      At line 39 in file question1.s
+Comment: LastDig used once
+MaxOne 0000000C
+
+Symbol: MaxOne
+   Definitions
+      At line 9 in file question1.s
+   Uses
+      At line 24 in file question1.s
+Comment: MaxOne used once
+MaxTwo 0000000B
+
+
+
+
+ARM Macro Assembler    Page 2 Alphabetic symbol ordering
+Absolute symbols
+
+Symbol: MaxTwo
+   Definitions
+      At line 10 in file question1.s
+   Uses
+      At line 33 in file question1.s
+Comment: MaxTwo used once
+MulCon 00000001
+
+Symbol: MulCon
+   Definitions
+      At line 5 in file question1.s
+   Uses
+      At line 36 in file question1.s
+Comment: MulCon used once
+RemAsci 00000030
+
+Symbol: RemAsci
+   Definitions
+      At line 12 in file question1.s
+   Uses
+      At line 21 in file question1.s
+      At line 30 in file question1.s
+      At line 40 in file question1.s
+
+SecondI 00000001
+
+Symbol: SecondI
+   Definitions
+      At line 7 in file question1.s
+   Uses
+      At line 27 in file question1.s
+Comment: SecondI used once
+Zero 00000000
+
+Symbol: Zero
+   Definitions
+      At line 4 in file question1.s
+   Uses
+      At line 43 in file question1.s
+Comment: Zero used once
+12 symbols
+354 symbols in table

@@ -1,0 +1,1 @@
+.\quizseven.o: quizseven.s

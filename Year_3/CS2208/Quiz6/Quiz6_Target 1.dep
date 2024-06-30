@@ -1,0 +1,2 @@
+Dependencies for Project 'Quiz6', Target 'Target 1': (DO NOT MODIFY !)
+F (.\Q1.s)(0x6359DFDF)(--cpu ARM7TDMI --bi --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include--list .\q1.lst --xref -o .\q1.o --depend .\q1.d)

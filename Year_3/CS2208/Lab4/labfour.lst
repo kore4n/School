@@ -1,0 +1,53 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             prog, CODE, READWRITE
+    2 00000000                 ENTRY
+    3 00000000 E3A00033        MOV              r0,#51
+    4 00000004 E3A01022        MOV              r1,#34
+    5 00000008 E1500001 
+                       GCD     CMP              r0, r1
+    6 0000000C C0400001        SUBGT            r0, r0, r1
+    7 00000010 B0411000        SUBLT            r1, r1, r0
+    8 00000014 1AFFFFFB        BNE              GCD
+    9 00000018 EAFFFFFE 
+                       Loop    B                Loop
+   10 0000001C                 END
+Command Line: --debug --xref --bi --apcs=interwork --depend=.\labfour.d -o.\lab
+four.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include --predefine="__EVAL S
+ETA 1" --list=.\labfour.lst LabFour.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+GCD 00000008
+
+Symbol: GCD
+   Definitions
+      At line 5 in file LabFour.s
+   Uses
+      At line 8 in file LabFour.s
+Comment: GCD used once
+Loop 00000018
+
+Symbol: Loop
+   Definitions
+      At line 9 in file LabFour.s
+   Uses
+      At line 9 in file LabFour.s
+Comment: Loop used once
+prog 00000000
+
+Symbol: prog
+   Definitions
+      At line 1 in file LabFour.s
+   Uses
+      None
+Comment: prog unused
+3 symbols
+334 symbols in table

@@ -1,0 +1,57 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             prog, CODE, READWRITE
+    2 00000000                 ENTRY
+    3 00000000 E28F3018        ADR              r3,AAA
+    4 00000004 E1A0000F        MOV              r0,PC
+    5 00000008 E8A38000        STMEA            r3!,{PC}
+    6 0000000C E583F000        STR              PC,[r3]
+    7 00000010 E8130006        LDMFA            r3,{r1,r2}
+    8 00000014 EAFFFFFE 
+                       Loop    B                Loop
+    9 00000018 00000001 
+              00000002         DCD              1,2
+   10 00000020 00000003 
+                       AAA     DCD              3
+   11 00000024 00000004 
+              00000005         DCD              4,5
+   12 0000002C                 END
+Command Line: --debug --xref --bi --apcs=interwork --depend=.\assembly_lab_6_2b
+.d -o.\assembly_lab_6_2b.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include -
+-predefine="__EVAL SETA 1" --list=.\assembly_lab_6_2b.lst Assembly_Lab_6_2b.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+AAA 00000020
+
+Symbol: AAA
+   Definitions
+      At line 10 in file Assembly_Lab_6_2b.s
+   Uses
+      At line 3 in file Assembly_Lab_6_2b.s
+Comment: AAA used once
+Loop 00000014
+
+Symbol: Loop
+   Definitions
+      At line 8 in file Assembly_Lab_6_2b.s
+   Uses
+      At line 8 in file Assembly_Lab_6_2b.s
+Comment: Loop used once
+prog 00000000
+
+Symbol: prog
+   Definitions
+      At line 1 in file Assembly_Lab_6_2b.s
+   Uses
+      None
+Comment: prog unused
+3 symbols
+334 symbols in table

@@ -1,0 +1,3 @@
+Dependencies for Project 'Lab4', Target 'Target 1': (DO NOT MODIFY !)
+F (.\LabFourQTwo.s)(0x6376C755)(--cpu ARM7TDMI --bi --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include--list .\labfourqtwo.lst --xref -o .\labfourqtwo.o --depend .\labfourqtwo.d)
+F (.\LabFour.s)(0x6376BA2C)(--cpu ARM7TDMI --bi --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include--list .\labfour.lst --xref -o .\labfour.o --depend .\labfour.d)

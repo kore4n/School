@@ -1,0 +1,1 @@
+.\labtwo.o: labtwo.s

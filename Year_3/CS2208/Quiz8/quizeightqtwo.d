@@ -1,0 +1,1 @@
+.\quizeightqtwo.o: QuizEightQTwo.s

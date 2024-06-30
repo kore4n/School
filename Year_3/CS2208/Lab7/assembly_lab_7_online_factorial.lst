@@ -1,0 +1,272 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             factorial, CODE, READONLY
+    2 00000000         
+    3 00000000 00000003 
+                       n       EQU              3
+    4 00000000         
+    5 00000000                 ENTRY
+    6 00000000 E28FDE13 
+                       Main    ADR              sp,stack    ;define the stack
+    7 00000004 E3A00003        MOV              r0, #n      ;prepare the parame
+                                                            ter
+    8 00000008 E52D0004        STR              r0,[sp,#-4]! ;push the paramete
+                                                            r on the stack
+    9 0000000C E24DD004        SUB              sp,sp,#4    ;reserve a place in
+                                                             the stack for the 
+                                                            return value
+   10 00000010 EB000004        BL               Fact        ;call the Fact subr
+                                                            outine
+   11 00000014 E49D0004        LDR              r0,[sp],#4  ;load the result in
+                                                             r0 and pop it from
+                                                             the stack
+   12 00000018 E28DD004        ADD              sp,sp,#4    ;also remove the pa
+                                                            rameter from the st
+                                                            ack
+   13 0000001C E28F105C        ADR              r1,result   ;get the address of
+                                                             the result variabl
+                                                            e
+   14 00000020 E5810000        STR              r0,[r1]     ;store the final re
+                                                            sult in the result 
+                                                            variable
+   15 00000024 EAFFFFFE 
+                       Loop    B                Loop        ;infinite loop
+   16 00000028         
+   17 00000028         ;-------------------------------------------------------
+                       -------------------------
+   18 00000028         
+   19 00000028                 AREA             factorial, CODE, READONLY
+   20 00000028         
+   21 00000028 E92D4807 
+                       Fact    STMFD            sp!,{r0,r1,r2,fp,lr} ;push gene
+                                                            ral registers, as w
+                                                            ell as fp and lr
+   22 0000002C E1A0B00D        MOV              fp,sp       ;set the fp for thi
+                                                            s call
+   23 00000030 E24DD008        SUB              sp,sp,#8    ;create space for t
+                                                            he x and y local va
+                                                            riables
+   24 00000034 E59B0018        LDR              r0,[fp,#0x18] ;get the paramete
+                                                            r from the stack
+   25 00000038 E280100A        ADD              r1,r0,#10   ;calculate the x va
+                                                            lue (i.e., n + 10)
+   26 0000003C E50B1008        STR              r1,[fp,#-0x8] ;update the value
+                                                             of the local varia
+                                                            ble x
+   27 00000040 E240100A        SUB              r1,r0,#10   ;calculate the y va
+                                                            lue (i.e., n - 10)
+   28 00000044 E50B1004        STR              r1,[fp,#-0x4] ;update the value
+                                                             of the local varia
+                                                            ble y
+   29 00000048 E3500001        CMP              r0,#1       ;if (n <= 1)
+
+
+
+ARM Macro Assembler    Page 2 
+
+
+   30 0000004C D3A00001        MOVLE            r0,#1       ;{ prepare the valu
+                                                            e to be returned
+   31 00000050 D58B0014        STRLE            r0,[fp,#0x14] ;  store the retu
+                                                            rned value in the s
+                                                            tack
+   32 00000054 DA000007        BLE              ret         ;  branch to the re
+                                                            turn section
+   33 00000058         ;}
+   34 00000058 E2401001        SUB              r1,r0,#1    ;{ prepare the new 
+                                                            parameter value
+   35 0000005C E52D1004        STR              r1,[sp,#-4]! ;  push the parame
+                                                            ter on the stack
+   36 00000060 E24DD004        SUB              sp,sp,#4    ;  reserve a place 
+                                                            in the stack for th
+                                                            e return value
+   37 00000064 EBFFFFEF        BL               Fact        ;  call the Fact su
+                                                            broutine         
+   38 00000068 E49D1004        LDR              r1,[sp],#4  ;  load the result 
+                                                            in r0 and pop it fr
+                                                            om the stack
+   39 0000006C E28DD004        ADD              sp,sp,#4    ;  remove also the 
+                                                            parameter from the 
+                                                            stack
+   40 00000070 E0020190        MUL              r2,r0,r1    ;  prepare the valu
+                                                            e to be returned
+   41 00000074 E58B2014        STR              r2,[fp,#0x14] ;  store the retu
+                                                            rned value in the s
+                                                            tack
+   42 00000078         ;}
+   43 00000078 E1A0D00B 
+                       ret     MOV              sp,fp       ;collapse all worki
+                                                            ng spaces for this 
+                                                            function call
+   44 0000007C E8BD8807        LDMFD            sp!,{r0,r1,r2,fp,pc} ;load all 
+                                                            registers and retur
+                                                            n to the caller
+   45 00000080         
+   46 00000080         ;-------------------------------------------------------
+                       -------------------------
+   47 00000080         
+   48 00000080                 AREA             factorial, DATA, READWRITE
+   49 00000080         
+   50 00000080 00000000 
+                       result  DCD              0x00        ;the final result
+   51 00000084 00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+
+
+
+ARM Macro Assembler    Page 3 
+
+
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00         SPACE            0xB4        ;declare the space 
+                                                            for stack
+   52 00000138 00000000 
+                       stack   DCD              0x00        ;initial stack posi
+                                                            tion (FD model)
+   53 0000013C         ;-------------------------------------------------------
+                       -------------------------
+   54 0000013C                 END
+Command Line: --debug --xref --bi --apcs=interwork --depend=.\assembly_lab_7_on
+line_factorial.d -o.\assembly_lab_7_online_factorial.o -IC:\Keil\ARM\RV31\INC -
+IC:\Keil\ARM\CMSIS\Include --predefine="__EVAL SETA 1" --list=.\assembly_lab_7_
+online_factorial.lst Assembly_Lab_7_ONLINE_factorial.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+Fact 00000028
+
+Symbol: Fact
+   Definitions
+      At line 21 in file Assembly_Lab_7_ONLINE_factorial.s
+   Uses
+      At line 10 in file Assembly_Lab_7_ONLINE_factorial.s
+      At line 37 in file Assembly_Lab_7_ONLINE_factorial.s
+
+Loop 00000024
+
+Symbol: Loop
+   Definitions
+      At line 15 in file Assembly_Lab_7_ONLINE_factorial.s
+   Uses
+      At line 15 in file Assembly_Lab_7_ONLINE_factorial.s
+Comment: Loop used once
+Main 00000000
+
+Symbol: Main
+   Definitions
+      At line 6 in file Assembly_Lab_7_ONLINE_factorial.s
+   Uses
+      None
+Comment: Main unused
+factorial 00000000
+
+Symbol: factorial
+   Definitions
+      At line 1 in file Assembly_Lab_7_ONLINE_factorial.s
+   Uses
+      None
+Comment: factorial unused
+result 00000080
+
+Symbol: result
+   Definitions
+      At line 50 in file Assembly_Lab_7_ONLINE_factorial.s
+   Uses
+      At line 13 in file Assembly_Lab_7_ONLINE_factorial.s
+Comment: result used once
+ret 00000078
+
+Symbol: ret
+   Definitions
+      At line 43 in file Assembly_Lab_7_ONLINE_factorial.s
+   Uses
+      At line 32 in file Assembly_Lab_7_ONLINE_factorial.s
+Comment: ret used once
+stack 00000138
+
+Symbol: stack
+   Definitions
+      At line 52 in file Assembly_Lab_7_ONLINE_factorial.s
+   Uses
+      At line 6 in file Assembly_Lab_7_ONLINE_factorial.s
+Comment: stack used once
+7 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Absolute symbols
+
+n 00000003
+
+Symbol: n
+   Definitions
+      At line 3 in file Assembly_Lab_7_ONLINE_factorial.s
+   Uses
+      At line 7 in file Assembly_Lab_7_ONLINE_factorial.s
+Comment: n used once
+1 symbol
+339 symbols in table

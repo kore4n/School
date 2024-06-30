@@ -1,0 +1,160 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         
+    2 00000000                 AREA             More_data_definitions, CODE, RE
+ADONLY
+    3 00000000                 ENTRY
+    4 00000000 00 00 00 
+                       L1      SPACE            3
+    5 00000003 00 00 00 
+                       L2      SPACE            3
+    6 00000006 00 00           ALIGN
+    7 00000008 00 00 00 
+                       L3      SPACE            3
+    8 0000000B 00 12345678 
+                       L4      DCD              0x12345678
+    9 00000010 0000F0F0 
+                       L5      DCD              +2_1111000011110000
+   10 00000014 FFFF0F10 
+                       L6      DCD              -2_1111000011110000
+   11 00000018         
+   12 00000018 00 FF   L7      DCW              255
+   13 0000001A FF 01   L8      DCW              -255
+   14 0000001C         
+   15 0000001C 0A      L9      DCB              &0A
+   16 0000001D 00 00 00        ALIGN
+   17 00000020         
+   18 00000020 00000001 
+              00000002 
+              00000003 
+              00000004 LA      DCD              1,2,3,4
+   19 00000030 05      LB      DCB              5
+   20 00000031 00 00 00 
+              00000006 LC      DCD              6
+   21 00000038         
+   22 00000038                 END
+Command Line: --debug --xref --bi --apcs=interwork --depend=.\q1.d -o.\q1.o -IC
+:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include --predefine="__EVAL SETA 1" --l
+ist=.\q1.lst Q1.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+L1 00000000
+
+Symbol: L1
+   Definitions
+      At line 4 in file Q1.s
+   Uses
+      None
+Comment: L1 unused
+L2 00000003
+
+Symbol: L2
+   Definitions
+      At line 5 in file Q1.s
+   Uses
+      None
+Comment: L2 unused
+L3 00000008
+
+Symbol: L3
+   Definitions
+      At line 7 in file Q1.s
+   Uses
+      None
+Comment: L3 unused
+L4 0000000C
+
+Symbol: L4
+   Definitions
+      At line 8 in file Q1.s
+   Uses
+      None
+Comment: L4 unused
+L5 00000010
+
+Symbol: L5
+   Definitions
+      At line 9 in file Q1.s
+   Uses
+      None
+Comment: L5 unused
+L6 00000014
+
+Symbol: L6
+   Definitions
+      At line 10 in file Q1.s
+   Uses
+      None
+Comment: L6 unused
+L7 00000018
+
+Symbol: L7
+   Definitions
+      At line 12 in file Q1.s
+   Uses
+      None
+Comment: L7 unused
+L8 0000001A
+
+Symbol: L8
+
+
+
+ARM Macro Assembler    Page 2 Alphabetic symbol ordering
+Relocatable symbols
+
+   Definitions
+      At line 13 in file Q1.s
+   Uses
+      None
+Comment: L8 unused
+L9 0000001C
+
+Symbol: L9
+   Definitions
+      At line 15 in file Q1.s
+   Uses
+      None
+Comment: L9 unused
+LA 00000020
+
+Symbol: LA
+   Definitions
+      At line 18 in file Q1.s
+   Uses
+      None
+Comment: LA unused
+LB 00000030
+
+Symbol: LB
+   Definitions
+      At line 19 in file Q1.s
+   Uses
+      None
+Comment: LB unused
+LC 00000034
+
+Symbol: LC
+   Definitions
+      At line 20 in file Q1.s
+   Uses
+      None
+Comment: LC unused
+More_data_definitions 00000000
+
+Symbol: More_data_definitions
+   Definitions
+      At line 2 in file Q1.s
+   Uses
+      None
+Comment: More_data_definitions unused
+13 symbols
+344 symbols in table

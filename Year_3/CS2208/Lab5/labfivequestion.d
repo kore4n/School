@@ -1,0 +1,1 @@
+.\labfivequestion.o: LabFiveQuestion.s

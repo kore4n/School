@@ -1,0 +1,1 @@
+.\assembly_lab_7_online_factorial.o: Assembly_Lab_7_ONLINE_factorial.s

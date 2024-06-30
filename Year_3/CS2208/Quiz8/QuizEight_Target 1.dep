@@ -1,0 +1,3 @@
+Dependencies for Project 'QuizEight', Target 'Target 1': (DO NOT MODIFY !)
+F (.\QuizEightQTwo.s)(0x63799746)(--cpu ARM7TDMI --bi --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include--list .\quizeightqtwo.lst --xref -o .\quizeightqtwo.o --depend .\quizeightqtwo.d)
+F (.\QuizEight.s)(0x637980C8)(--cpu ARM7TDMI --bi --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include--list .\quizeight.lst --xref -o .\quizeight.o --depend .\quizeight.d)

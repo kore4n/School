@@ -1,0 +1,48 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             LabOne, CODE, READWRITE
+    2 00000000                 ENTRY
+    3 00000000         
+    4 00000000 E3A01002        MOV              r1,#2
+    5 00000004 E3A02004        MOV              r2,#4
+    6 00000008 E3A03008        MOV              r3,#8
+    7 0000000C E3A04005        MOV              r4,#5
+    8 00000010         
+    9 00000010 E0815002        ADD              r5,r1,r2
+   10 00000014 E0060493        MUL              r6,r3,r4
+   11 00000018 E0450006        SUB              r0,R5,r6
+   12 0000001C         
+   13 0000001C EAFFFFFE 
+                       loop    b                loop
+   14 00000020                 END
+Command Line: --debug --xref --bi --apcs=interwork --depend=.\labone.d -o.\labo
+ne.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include --predefine="__EVAL SET
+A 1" --list=.\labone.lst LabOne.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+LabOne 00000000
+
+Symbol: LabOne
+   Definitions
+      At line 1 in file LabOne.s
+   Uses
+      None
+Comment: LabOne unused
+loop 0000001C
+
+Symbol: loop
+   Definitions
+      At line 13 in file LabOne.s
+   Uses
+      At line 13 in file LabOne.s
+Comment: loop used once
+2 symbols
+333 symbols in table

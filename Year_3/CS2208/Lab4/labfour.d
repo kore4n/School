@@ -1,0 +1,1 @@
+.\labfour.o: LabFour.s

@@ -1,0 +1,41 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             test, CODE, READONLY
+    2 00000000                 ENTRY
+    3 00000000 E3E00005        MOV              r0, #0xFFFFFFFA
+    4 00000004 E3E0100E        MOV              r1, #0xFFFFFFF1
+    5 00000008 E0912000        ADDS             r2, r1, r0
+    6 0000000C EAFFFFFE 
+                       loop    b                loop
+    7 00000010                 END
+Command Line: --debug --xref --bi --apcs=interwork --depend=.\quiz.d -o.\quiz.o
+ -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include --predefine="__EVAL SETA 1"
+ --list=.\quiz.lst quiz.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+loop 0000000C
+
+Symbol: loop
+   Definitions
+      At line 6 in file quiz.s
+   Uses
+      At line 6 in file quiz.s
+Comment: loop used once
+test 00000000
+
+Symbol: test
+   Definitions
+      At line 1 in file quiz.s
+   Uses
+      None
+Comment: test unused
+2 symbols
+333 symbols in table

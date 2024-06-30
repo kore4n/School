@@ -1,0 +1,106 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             prog, CODE, READWRITE
+    2 00000000                 ENTRY
+    3 00000000 E28F0019        ADR              R0,C+1
+    4 00000004 E3A01001        MOV              R1,#1
+    5 00000008 E5D02005        LDRB             R2,[R0,#5]
+    6 0000000C E6503101        LDRB             R3,[R0],-R1,LSL#2
+    7 00000010 E5F04002        LDRB             R4,[R0,#2]!
+    8 00000014 EAFFFFFE 
+                       Loop    B                Loop
+    9 00000018         
+   10 00000018 77      A       DCB              0x77
+   11 00000019 00 00 00 
+              AABBCCDD B       DCD              0xAABBCCDD
+   12 00000020 00      C       SPACE            1
+   13 00000021 88      D       DCB              0x88
+   14 00000022 00      E       SPACE            1
+   15 00000023 00 11223344 
+                       F       DCD              0x11223344
+   16 00000028                 END
+Command Line: --debug --xref --bi --apcs=interwork --depend=.\quizeight.d -o.\q
+uizeight.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include --predefine="__EV
+AL SETA 1" --list=.\quizeight.lst QuizEight.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+A 00000018
+
+Symbol: A
+   Definitions
+      At line 10 in file QuizEight.s
+   Uses
+      None
+Comment: A unused
+B 0000001C
+
+Symbol: B
+   Definitions
+      At line 11 in file QuizEight.s
+   Uses
+      None
+Comment: B unused
+C 00000020
+
+Symbol: C
+   Definitions
+      At line 12 in file QuizEight.s
+   Uses
+      At line 3 in file QuizEight.s
+Comment: C used once
+D 00000021
+
+Symbol: D
+   Definitions
+      At line 13 in file QuizEight.s
+   Uses
+      None
+Comment: D unused
+E 00000022
+
+Symbol: E
+   Definitions
+      At line 14 in file QuizEight.s
+   Uses
+      None
+Comment: E unused
+F 00000024
+
+Symbol: F
+   Definitions
+      At line 15 in file QuizEight.s
+   Uses
+      None
+Comment: F unused
+Loop 00000014
+
+Symbol: Loop
+   Definitions
+      At line 8 in file QuizEight.s
+   Uses
+      At line 8 in file QuizEight.s
+Comment: Loop used once
+prog 00000000
+
+Symbol: prog
+
+
+
+ARM Macro Assembler    Page 2 Alphabetic symbol ordering
+Relocatable symbols
+
+   Definitions
+      At line 1 in file QuizEight.s
+   Uses
+      None
+Comment: prog unused
+8 symbols
+339 symbols in table

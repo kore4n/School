@@ -1,0 +1,42 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             More_data_definitions, CODE, RE
+ADONLY
+    2 00000000                 ENTRY
+    3 00000000 E3E01002        mov              r1, #-3
+    4 00000004 EAFFFFFE 
+                       loop    b                loop
+    5 00000008 000000FF        DCD              0xFF
+    6 0000000C         
+    7 0000000C                 END
+Command Line: --debug --xref --bi --apcs=interwork --depend=.\labtwo.d -o.\labt
+wo.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include --predefine="__EVAL SET
+A 1" --list=.\labtwo.lst labtwo.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+More_data_definitions 00000000
+
+Symbol: More_data_definitions
+   Definitions
+      At line 1 in file labtwo.s
+   Uses
+      None
+Comment: More_data_definitions unused
+loop 00000004
+
+Symbol: loop
+   Definitions
+      At line 4 in file labtwo.s
+   Uses
+      At line 4 in file labtwo.s
+Comment: loop used once
+2 symbols
+333 symbols in table

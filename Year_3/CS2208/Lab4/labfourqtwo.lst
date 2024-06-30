@@ -1,0 +1,44 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             prog, CODE, READWRITE
+    2 00000000                 ENTRY
+    3 00000000 E3A00064        mov              r0, #100
+    4 00000004         
+    5 00000004 E59F2008        LDR              r2, =6554
+    6 00000008 E0010092        MUL              r1, r2, r0
+    7 0000000C E1A01841        ASR              r1, #16
+    8 00000010 EAFFFFFE 
+                       Loop    B                Loop
+    9 00000014                 END
+              0000199A 
+Command Line: --debug --xref --bi --apcs=interwork --depend=.\labfourqtwo.d -o.
+\labfourqtwo.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include --predefine="
+__EVAL SETA 1" --list=.\labfourqtwo.lst LabFourQTwo.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+Loop 00000010
+
+Symbol: Loop
+   Definitions
+      At line 8 in file LabFourQTwo.s
+   Uses
+      At line 8 in file LabFourQTwo.s
+Comment: Loop used once
+prog 00000000
+
+Symbol: prog
+   Definitions
+      At line 1 in file LabFourQTwo.s
+   Uses
+      None
+Comment: prog unused
+2 symbols
+335 symbols in table

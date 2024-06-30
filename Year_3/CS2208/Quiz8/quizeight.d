@@ -1,0 +1,1 @@
+.\quizeight.o: QuizEight.s

@@ -1,0 +1,44 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             testing, CODE, READONLY
+    2 00000000                 ENTRY
+    3 00000000 E3A00002        MOV              r0, #2
+    4 00000004 E3A01005        MOV              r1, #5
+    5 00000008 E3A02000        MOV              r2, #0
+    6 0000000C E3A000C9        LDR              r0, =0xC9
+    7 00000010 E1F01000        MVNS             r1, r0
+    8 00000014         
+    9 00000014 EAFFFFFE 
+                       loop    b                loop
+   10 00000018                 END
+Command Line: --debug --xref --bi --apcs=interwork --depend=.\testing.d -o.\tes
+ting.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include --predefine="__EVAL S
+ETA 1" --list=.\testing.lst testing.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+loop 00000014
+
+Symbol: loop
+   Definitions
+      At line 9 in file testing.s
+   Uses
+      At line 9 in file testing.s
+Comment: loop used once
+testing 00000000
+
+Symbol: testing
+   Definitions
+      At line 1 in file testing.s
+   Uses
+      None
+Comment: testing unused
+2 symbols
+333 symbols in table

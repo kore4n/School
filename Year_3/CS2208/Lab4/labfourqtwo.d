@@ -1,0 +1,1 @@
+.\labfourqtwo.o: LabFourQTwo.s

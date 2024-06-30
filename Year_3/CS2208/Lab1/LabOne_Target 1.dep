@@ -1,0 +1,2 @@
+Dependencies for Project 'LabOne', Target 'Target 1': (DO NOT MODIFY !)
+F (.\LabOne.s)(0x6351F8E5)(--cpu ARM7TDMI --bi --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include--list .\labone.lst --xref -o .\labone.o --depend .\labone.d)

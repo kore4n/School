@@ -1,0 +1,32 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             quiznine, CODE, READONLY
+    2 00000000 E9892080        STMIB            r9, {r7, r13}
+    3 00000004 E8160808        LDMDA            r6, {r3, r11}
+    4 00000008 E3A00021        mov              r0, #33
+    5 0000000C E1A0000D        mov              r0, SP
+    6 00000010                 ENTRY
+    7 00000010                 END
+Command Line: --debug --xref --bi --apcs=interwork --depend=.\quizninequestions
+.d -o.\quizninequestions.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include -
+-predefine="__EVAL SETA 1" --list=.\quizninequestions.lst QuizNineQuestions.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+quiznine 00000000
+
+Symbol: quiznine
+   Definitions
+      At line 1 in file QuizNineQuestions.s
+   Uses
+      None
+Comment: quiznine unused
+1 symbol
+332 symbols in table

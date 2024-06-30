@@ -1,0 +1,2 @@
+Dependencies for Project 'QuizNine', Target 'Target 1': (DO NOT MODIFY !)
+F (.\QuizNineQuestions.s)(0x6382D61C)(--cpu ARM7TDMI --bi --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include--list .\quizninequestions.lst --xref -o .\quizninequestions.o --depend .\quizninequestions.d)

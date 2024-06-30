@@ -1,0 +1,2 @@
+Dependencies for Project 'LabSeven', Target 'Target 1': (DO NOT MODIFY !)
+F (.\Assembly_Lab_7_ONLINE_factorial.s)(0x639281FD)(--cpu ARM7TDMI --bi --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include--list .\assembly_lab_7_online_factorial.lst --xref -o .\assembly_lab_7_online_factorial.o --depend .\assembly_lab_7_online_factorial.d)

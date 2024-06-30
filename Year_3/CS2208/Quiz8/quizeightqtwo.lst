@@ -1,0 +1,49 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             prog, CODE, READWRITE
+    2 00000000                 ENTRY
+    3 00000000         ;   mov r3, #0
+    4 00000000         ;   ADR r4, albl
+    5 00000000         ;   mov r5, #7
+    6 00000000         ;   LDREQ r3, [r4, r5]!
+    7 00000000         ;albl  DCB 32
+    8 00000000         
+    9 00000000 E28F4008        ADR              r4, albl
+   10 00000004 E3A06907        mov              r6, #0x1C000
+   11 00000008 E28F5000        ADR              r5, albl
+   12 0000000C         
+   13 0000000C 57D54006        LDRBPL           r4, [r5, r6]
+   14 00000010 20      albl    DCB              32
+   15 00000011                 END
+Command Line: --debug --xref --bi --apcs=interwork --depend=.\quizeightqtwo.d -
+o.\quizeightqtwo.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include --predefi
+ne="__EVAL SETA 1" --list=.\quizeightqtwo.lst QuizEightQTwo.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+albl 00000010
+
+Symbol: albl
+   Definitions
+      At line 14 in file QuizEightQTwo.s
+   Uses
+      At line 9 in file QuizEightQTwo.s
+      At line 11 in file QuizEightQTwo.s
+
+prog 00000000
+
+Symbol: prog
+   Definitions
+      At line 1 in file QuizEightQTwo.s
+   Uses
+      None
+Comment: prog unused
+2 symbols
+333 symbols in table
