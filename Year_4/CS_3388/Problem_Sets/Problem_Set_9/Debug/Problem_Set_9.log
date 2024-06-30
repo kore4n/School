@@ -1,0 +1,33 @@
+﻿  Problem_Set_9.cpp
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Problem_Sets\Problem_Set_9\src\Problem_Set_9.cpp(320,26): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Problem_Sets\Problem_Set_9\src\Problem_Set_9.cpp(332,37): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Problem_Sets\Problem_Set_9\src\Problem_Set_9.cpp(341,43): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Problem_Sets\Problem_Set_9\src\Problem_Set_9.cpp(341,43): warning C4244:         with
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Problem_Sets\Problem_Set_9\src\Problem_Set_9.cpp(341,43): warning C4244:         [
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Problem_Sets\Problem_Set_9\src\Problem_Set_9.cpp(341,43): warning C4244:             T=float
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Problem_Sets\Problem_Set_9\src\Problem_Set_9.cpp(341,43): warning C4244:         ]
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Problem_Sets\Problem_Set_9\src\Problem_Set_9.cpp(342,19): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Problem_Sets\Problem_Set_9\src\Problem_Set_9.cpp(342,19): warning C4244:         with
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Problem_Sets\Problem_Set_9\src\Problem_Set_9.cpp(342,19): warning C4244:         [
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Problem_Sets\Problem_Set_9\src\Problem_Set_9.cpp(342,19): warning C4244:             T=float
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Problem_Sets\Problem_Set_9\src\Problem_Set_9.cpp(342,19): warning C4244:         ]
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Problem_Sets\Problem_Set_9\src\Problem_Set_9.cpp(343,43): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Problem_Sets\Problem_Set_9\src\Problem_Set_9.cpp(343,43): warning C4244:         with
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Problem_Sets\Problem_Set_9\src\Problem_Set_9.cpp(343,43): warning C4244:         [
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Problem_Sets\Problem_Set_9\src\Problem_Set_9.cpp(343,43): warning C4244:             T=float
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Problem_Sets\Problem_Set_9\src\Problem_Set_9.cpp(343,43): warning C4244:         ]
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Problem_Sets\Problem_Set_9\src\Problem_Set_9.cpp(339,7): warning C4101: 'cameraFront': unreferenced local variable
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Problem_Sets\Problem_Set_9\src\Problem_Set_9.cpp(516,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Problem_Sets\Problem_Set_9\src\Problem_Set_9.cpp(568,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Problem_Sets\Problem_Set_9\src\Problem_Set_9.cpp(618,55): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Problem_Sets\Problem_Set_9\src\Problem_Set_9.cpp(620,55): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Problem_Sets\Problem_Set_9\src\Problem_Set_9.cpp(627,55): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Problem_Sets\Problem_Set_9\src\Problem_Set_9.cpp(629,55): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Problem_Sets\Problem_Set_9\src\Problem_Set_9.cpp(636,23): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Problem_Sets\Problem_Set_9\src\Problem_Set_9.cpp(639,23): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Problem_Sets\Problem_Set_9\src\Problem_Set_9.cpp(748,19): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Problem_Sets\Problem_Set_9\src\Problem_Set_9.cpp(751,13): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Problem_Sets\Problem_Set_9\src\Problem_Set_9.cpp(754,13): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Problem_Sets\Problem_Set_9\src\Problem_Set_9.cpp(757,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+  Problem_Set_9.vcxproj -> C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Problem_Sets\Problem_Set_9\Debug\Problem_Set_9.exe

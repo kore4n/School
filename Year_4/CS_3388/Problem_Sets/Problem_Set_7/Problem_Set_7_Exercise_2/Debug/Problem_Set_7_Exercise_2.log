@@ -1,0 +1,4 @@
+﻿  Problem_Set_7_Exercise_2.cpp
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Problem_Sets\Problem_Set_7\Problem_Set_7_Exercise_2\src\Problem_Set_7_Exercise_2.cpp(57,37): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Problem_Sets\Problem_Set_7\Problem_Set_7_Exercise_2\src\Problem_Set_7_Exercise_2.cpp(57,28): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  Problem_Set_7_Exercise_2.vcxproj -> C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Problem_Sets\Problem_Set_7\Problem_Set_7_Exercise_2\Debug\Problem_Set_7_Exercise_2.exe

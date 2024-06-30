@@ -1,0 +1,278 @@
+\hypertarget{classnlohmann_1_1detail_1_1serializer}{}\doxysection{nlohmann\+::detail\+::serializer$<$ Basic\+Json\+Type $>$ Class Template Reference}
+\label{classnlohmann_1_1detail_1_1serializer}\index{nlohmann::detail::serializer$<$ BasicJsonType $>$@{nlohmann::detail::serializer$<$ BasicJsonType $>$}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classnlohmann_1_1detail_1_1serializer_ac010525281d97867ee842da37294fe83}{serializer}} (\mbox{\hyperlink{namespacenlohmann_1_1detail_a9b680ddfb58f27eb53a67229447fc556}{output\+\_\+adapter\+\_\+t}}$<$ char $>$ s, const char ichar, \mbox{\hyperlink{namespacenlohmann_1_1detail_a5a76b60b26dc8c47256a996d18d967df}{error\+\_\+handler\+\_\+t}} error\+\_\+handler\+\_\+=\mbox{\hyperlink{namespacenlohmann_1_1detail_a5a76b60b26dc8c47256a996d18d967dfa2133fd717402a7966ee88d06f9e0b792}{error\+\_\+handler\+\_\+t\+::strict}})
+\item 
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1serializer_ae3771351ec4cb892bec707edeb56dc31}\label{classnlohmann_1_1detail_1_1serializer_ae3771351ec4cb892bec707edeb56dc31}} 
+{\bfseries serializer} (const \mbox{\hyperlink{classnlohmann_1_1detail_1_1serializer}{serializer}} \&)=delete
+\item 
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1serializer_a5f14c33012477b9f9876dc54d97009a0}\label{classnlohmann_1_1detail_1_1serializer_a5f14c33012477b9f9876dc54d97009a0}} 
+\mbox{\hyperlink{classnlohmann_1_1detail_1_1serializer}{serializer}} \& {\bfseries operator=} (const \mbox{\hyperlink{classnlohmann_1_1detail_1_1serializer}{serializer}} \&)=delete
+\item 
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1serializer_a28081304e70cca6b3042c101ee5c498c}\label{classnlohmann_1_1detail_1_1serializer_a28081304e70cca6b3042c101ee5c498c}} 
+{\bfseries serializer} (\mbox{\hyperlink{classnlohmann_1_1detail_1_1serializer}{serializer}} \&\&)=delete
+\item 
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1serializer_acaafe3436ee5fb74777eb4132a88c513}\label{classnlohmann_1_1detail_1_1serializer_acaafe3436ee5fb74777eb4132a88c513}} 
+\mbox{\hyperlink{classnlohmann_1_1detail_1_1serializer}{serializer}} \& {\bfseries operator=} (\mbox{\hyperlink{classnlohmann_1_1detail_1_1serializer}{serializer}} \&\&)=delete
+\item 
+void \mbox{\hyperlink{classnlohmann_1_1detail_1_1serializer_a95460ebd1a535a543e5a0ec52e00f48b}{dump}} (const Basic\+Json\+Type \&val, const bool pretty\+\_\+print, const bool ensure\+\_\+ascii, const unsigned int indent\+\_\+step, const unsigned int current\+\_\+indent=0)
+\begin{DoxyCompactList}\small\item\em internal implementation of the serialization function \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1serializer_ad08aa54fac1dd0a453320c54137d45ba}\label{classnlohmann_1_1detail_1_1serializer_ad08aa54fac1dd0a453320c54137d45ba}} 
+using {\bfseries string\+\_\+t} = typename Basic\+Json\+Type\+::string\+\_\+t
+\item 
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1serializer_a460c6794fbabbb2ae83380e987a6c030}\label{classnlohmann_1_1detail_1_1serializer_a460c6794fbabbb2ae83380e987a6c030}} 
+using {\bfseries number\+\_\+float\+\_\+t} = typename Basic\+Json\+Type\+::number\+\_\+float\+\_\+t
+\item 
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1serializer_ae7b1df1c70bdec1371f297567726a198}\label{classnlohmann_1_1detail_1_1serializer_ae7b1df1c70bdec1371f297567726a198}} 
+using {\bfseries number\+\_\+integer\+\_\+t} = typename Basic\+Json\+Type\+::number\+\_\+integer\+\_\+t
+\item 
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1serializer_a16c7b7a726a38ff0c06dce7ba7968391}\label{classnlohmann_1_1detail_1_1serializer_a16c7b7a726a38ff0c06dce7ba7968391}} 
+using {\bfseries number\+\_\+unsigned\+\_\+t} = typename Basic\+Json\+Type\+::number\+\_\+unsigned\+\_\+t
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classnlohmann_1_1detail_1_1serializer_ac1f8d1165b44149bd8be397dce68ea05}{dump\+\_\+escaped}} (const string\+\_\+t \&s, const bool ensure\+\_\+ascii)
+\begin{DoxyCompactList}\small\item\em dump escaped string \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{classnlohmann_1_1detail_1_1serializer_a10692e98ea1f5a64de1d0b8e0e724b99}{count\+\_\+digits}} (number\+\_\+unsigned\+\_\+t x) noexcept
+\begin{DoxyCompactList}\small\item\em count digits \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Number\+Type , detail\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+same$<$ Number\+Type, number\+\_\+unsigned\+\_\+t $>$\+::value or std\+::is\+\_\+same$<$ Number\+Type, number\+\_\+integer\+\_\+t $>$\+::value, int $>$  = 0$>$ }\\void \mbox{\hyperlink{classnlohmann_1_1detail_1_1serializer_a944f6dea8dbe2961da145d2f62fa2c2f}{dump\+\_\+integer}} (Number\+Type x)
+\begin{DoxyCompactList}\small\item\em dump an integer \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classnlohmann_1_1detail_1_1serializer_a6d652a3bfa581cf1cd7790d6d11ea52f}{dump\+\_\+float}} (number\+\_\+float\+\_\+t x)
+\begin{DoxyCompactList}\small\item\em dump a floating-\/point number \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1serializer_a24b0fe45dc774441237bde198a133d8a}\label{classnlohmann_1_1detail_1_1serializer_a24b0fe45dc774441237bde198a133d8a}} 
+void {\bfseries dump\+\_\+float} (number\+\_\+float\+\_\+t x, std\+::true\+\_\+type)
+\item 
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1serializer_a331dad892fc00313f928fdaa6bc8f849}\label{classnlohmann_1_1detail_1_1serializer_a331dad892fc00313f928fdaa6bc8f849}} 
+void {\bfseries dump\+\_\+float} (number\+\_\+float\+\_\+t x, std\+::false\+\_\+type)
+\item 
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1serializer_a45bcb8ea41e4db5461e979d4b1d5e5e7}\label{classnlohmann_1_1detail_1_1serializer_a45bcb8ea41e4db5461e979d4b1d5e5e7}} 
+number\+\_\+unsigned\+\_\+t {\bfseries remove\+\_\+sign} (number\+\_\+unsigned\+\_\+t x)
+\item 
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1serializer_aecc9c3f809a94a07010ea01d9c5a0c42}\label{classnlohmann_1_1detail_1_1serializer_aecc9c3f809a94a07010ea01d9c5a0c42}} 
+number\+\_\+unsigned\+\_\+t {\bfseries remove\+\_\+sign} (number\+\_\+integer\+\_\+t x) noexcept
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::uint8\+\_\+t \mbox{\hyperlink{classnlohmann_1_1detail_1_1serializer_abdcc4fd1dc5d3afb6c0817e4c89b1242}{decode}} (std\+::uint8\+\_\+t \&state, std\+::uint32\+\_\+t \&codep, const std\+::uint8\+\_\+t byte) noexcept
+\begin{DoxyCompactList}\small\item\em check whether a string is UTF-\/8 encoded \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1serializer_acf3c88660d3cbc65fc71c4d84f2a9f59}\label{classnlohmann_1_1detail_1_1serializer_acf3c88660d3cbc65fc71c4d84f2a9f59}} 
+\mbox{\hyperlink{namespacenlohmann_1_1detail_a9b680ddfb58f27eb53a67229447fc556}{output\+\_\+adapter\+\_\+t}}$<$ char $>$ \mbox{\hyperlink{classnlohmann_1_1detail_1_1serializer_acf3c88660d3cbc65fc71c4d84f2a9f59}{o}} = nullptr
+\begin{DoxyCompactList}\small\item\em the output of the serializer \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1serializer_a1a9d8b344a6cb47728a3519693ec03d1}\label{classnlohmann_1_1detail_1_1serializer_a1a9d8b344a6cb47728a3519693ec03d1}} 
+std\+::array$<$ char, 64 $>$ \mbox{\hyperlink{classnlohmann_1_1detail_1_1serializer_a1a9d8b344a6cb47728a3519693ec03d1}{number\+\_\+buffer}} \{\{\}\}
+\begin{DoxyCompactList}\small\item\em a (hopefully) large enough character buffer \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1serializer_a1952945b7652afb59d3903cc8457a589}\label{classnlohmann_1_1detail_1_1serializer_a1952945b7652afb59d3903cc8457a589}} 
+const std\+::lconv $\ast$ \mbox{\hyperlink{classnlohmann_1_1detail_1_1serializer_a1952945b7652afb59d3903cc8457a589}{loc}} = nullptr
+\begin{DoxyCompactList}\small\item\em the locale \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1serializer_a78a6ae833bb6cf7f00cb0d51db114b14}\label{classnlohmann_1_1detail_1_1serializer_a78a6ae833bb6cf7f00cb0d51db114b14}} 
+const char \mbox{\hyperlink{classnlohmann_1_1detail_1_1serializer_a78a6ae833bb6cf7f00cb0d51db114b14}{thousands\+\_\+sep}} = \textquotesingle{}\textbackslash{}0\textquotesingle{}
+\begin{DoxyCompactList}\small\item\em the locale\textquotesingle{}s thousand separator character \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1serializer_a311e5d6f4b31d5be0eb3c0cb20b6965a}\label{classnlohmann_1_1detail_1_1serializer_a311e5d6f4b31d5be0eb3c0cb20b6965a}} 
+const char \mbox{\hyperlink{classnlohmann_1_1detail_1_1serializer_a311e5d6f4b31d5be0eb3c0cb20b6965a}{decimal\+\_\+point}} = \textquotesingle{}\textbackslash{}0\textquotesingle{}
+\begin{DoxyCompactList}\small\item\em the locale\textquotesingle{}s decimal point character \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1serializer_a9c9b7ca63a66e59e5e7ffe8a2acf5c8f}\label{classnlohmann_1_1detail_1_1serializer_a9c9b7ca63a66e59e5e7ffe8a2acf5c8f}} 
+std\+::array$<$ char, 512 $>$ \mbox{\hyperlink{classnlohmann_1_1detail_1_1serializer_a9c9b7ca63a66e59e5e7ffe8a2acf5c8f}{string\+\_\+buffer}} \{\{\}\}
+\begin{DoxyCompactList}\small\item\em string buffer \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1serializer_a9a55e6b028d09676fe35aefa0c72ea5b}\label{classnlohmann_1_1detail_1_1serializer_a9a55e6b028d09676fe35aefa0c72ea5b}} 
+const char \mbox{\hyperlink{classnlohmann_1_1detail_1_1serializer_a9a55e6b028d09676fe35aefa0c72ea5b}{indent\+\_\+char}}
+\begin{DoxyCompactList}\small\item\em the indentation character \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1serializer_ae9268a10d88a5526e32735a55a132fc6}\label{classnlohmann_1_1detail_1_1serializer_ae9268a10d88a5526e32735a55a132fc6}} 
+string\+\_\+t \mbox{\hyperlink{classnlohmann_1_1detail_1_1serializer_ae9268a10d88a5526e32735a55a132fc6}{indent\+\_\+string}}
+\begin{DoxyCompactList}\small\item\em the indentation string \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1serializer_a09d5a046fb0f7cb61977d6e5fbe8b3a1}\label{classnlohmann_1_1detail_1_1serializer_a09d5a046fb0f7cb61977d6e5fbe8b3a1}} 
+const \mbox{\hyperlink{namespacenlohmann_1_1detail_a5a76b60b26dc8c47256a996d18d967df}{error\+\_\+handler\+\_\+t}} \mbox{\hyperlink{classnlohmann_1_1detail_1_1serializer_a09d5a046fb0f7cb61977d6e5fbe8b3a1}{error\+\_\+handler}}
+\begin{DoxyCompactList}\small\item\em error\+\_\+handler how to react on decoding errors \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1serializer_a2311a8c756c4a119aa82cd55301d13bc}\label{classnlohmann_1_1detail_1_1serializer_a2311a8c756c4a119aa82cd55301d13bc}} 
+static constexpr std\+::uint8\+\_\+t {\bfseries UTF8\+\_\+\+ACCEPT} = 0
+\item 
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1serializer_a833bd5805e4380549f4e21c304820d6d}\label{classnlohmann_1_1detail_1_1serializer_a833bd5805e4380549f4e21c304820d6d}} 
+static constexpr std\+::uint8\+\_\+t {\bfseries UTF8\+\_\+\+REJECT} = 1
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1serializer_ac010525281d97867ee842da37294fe83}\label{classnlohmann_1_1detail_1_1serializer_ac010525281d97867ee842da37294fe83}} 
+\index{nlohmann::detail::serializer$<$ BasicJsonType $>$@{nlohmann::detail::serializer$<$ BasicJsonType $>$}!serializer@{serializer}}
+\index{serializer@{serializer}!nlohmann::detail::serializer$<$ BasicJsonType $>$@{nlohmann::detail::serializer$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{serializer()}{serializer()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+\mbox{\hyperlink{classnlohmann_1_1detail_1_1serializer}{nlohmann\+::detail\+::serializer}}$<$ Basic\+Json\+Type $>$\+::\mbox{\hyperlink{classnlohmann_1_1detail_1_1serializer}{serializer}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacenlohmann_1_1detail_a9b680ddfb58f27eb53a67229447fc556}{output\+\_\+adapter\+\_\+t}}$<$ char $>$}]{s,  }\item[{const char}]{ichar,  }\item[{\mbox{\hyperlink{namespacenlohmann_1_1detail_a5a76b60b26dc8c47256a996d18d967df}{error\+\_\+handler\+\_\+t}}}]{error\+\_\+handler\+\_\+ = {\ttfamily \mbox{\hyperlink{namespacenlohmann_1_1detail_a5a76b60b26dc8c47256a996d18d967dfa2133fd717402a7966ee88d06f9e0b792}{error\+\_\+handler\+\_\+t\+::strict}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em s} & output stream to serialize to \\
+\hline
+\mbox{\texttt{ in}}  & {\em ichar} & indentation character to use \\
+\hline
+\mbox{\texttt{ in}}  & {\em error\+\_\+handler\+\_\+} & how to react on decoding errors \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1serializer_a10692e98ea1f5a64de1d0b8e0e724b99}\label{classnlohmann_1_1detail_1_1serializer_a10692e98ea1f5a64de1d0b8e0e724b99}} 
+\index{nlohmann::detail::serializer$<$ BasicJsonType $>$@{nlohmann::detail::serializer$<$ BasicJsonType $>$}!count\_digits@{count\_digits}}
+\index{count\_digits@{count\_digits}!nlohmann::detail::serializer$<$ BasicJsonType $>$@{nlohmann::detail::serializer$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{count\_digits()}{count\_digits()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+unsigned int \mbox{\hyperlink{classnlohmann_1_1detail_1_1serializer}{nlohmann\+::detail\+::serializer}}$<$ Basic\+Json\+Type $>$\+::count\+\_\+digits (\begin{DoxyParamCaption}\item[{number\+\_\+unsigned\+\_\+t}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}, {\ttfamily [noexcept]}}
+
+
+
+count digits 
+
+Count the number of decimal (base 10) digits for an input unsigned integer.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em x} & unsigned integer number to count its digits \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number of decimal digits 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1serializer_abdcc4fd1dc5d3afb6c0817e4c89b1242}\label{classnlohmann_1_1detail_1_1serializer_abdcc4fd1dc5d3afb6c0817e4c89b1242}} 
+\index{nlohmann::detail::serializer$<$ BasicJsonType $>$@{nlohmann::detail::serializer$<$ BasicJsonType $>$}!decode@{decode}}
+\index{decode@{decode}!nlohmann::detail::serializer$<$ BasicJsonType $>$@{nlohmann::detail::serializer$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{decode()}{decode()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+static std\+::uint8\+\_\+t \mbox{\hyperlink{classnlohmann_1_1detail_1_1serializer}{nlohmann\+::detail\+::serializer}}$<$ Basic\+Json\+Type $>$\+::decode (\begin{DoxyParamCaption}\item[{std\+::uint8\+\_\+t \&}]{state,  }\item[{std\+::uint32\+\_\+t \&}]{codep,  }\item[{const std\+::uint8\+\_\+t}]{byte }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}, {\ttfamily [noexcept]}}
+
+
+
+check whether a string is UTF-\/8 encoded 
+
+The function checks each byte of a string whether it is UTF-\/8 encoded. The result of the check is stored in the {\itshape state} parameter. The function must be called initially with state 0 (accept). State 1 means the string must be rejected, because the current byte is not allowed. If the string is completely processed, but the state is non-\/zero, the string ended prematurely; that is, the last byte indicated more bytes should have followed.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em state} & the state of the decoding \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em codep} & codepoint (valid only if resulting state is UTF8\+\_\+\+ACCEPT) \\
+\hline
+\mbox{\texttt{ in}}  & {\em byte} & next byte to decode \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+new state
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The function has been edited\+: a std\+::array is used.
+\end{DoxyNote}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2008-\/2009 Bjoern Hoehrmann \href{mailto:bjoern@hoehrmann.de}{\texttt{ bjoern@hoehrmann.\+de}} 
+\end{DoxyCopyright}
+\begin{DoxySeeAlso}{See also}
+\href{http://bjoern.hoehrmann.de/utf-8/decoder/dfa/}{\texttt{ http\+://bjoern.\+hoehrmann.\+de/utf-\/8/decoder/dfa/}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1serializer_a95460ebd1a535a543e5a0ec52e00f48b}\label{classnlohmann_1_1detail_1_1serializer_a95460ebd1a535a543e5a0ec52e00f48b}} 
+\index{nlohmann::detail::serializer$<$ BasicJsonType $>$@{nlohmann::detail::serializer$<$ BasicJsonType $>$}!dump@{dump}}
+\index{dump@{dump}!nlohmann::detail::serializer$<$ BasicJsonType $>$@{nlohmann::detail::serializer$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{dump()}{dump()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+void \mbox{\hyperlink{classnlohmann_1_1detail_1_1serializer}{nlohmann\+::detail\+::serializer}}$<$ Basic\+Json\+Type $>$\+::dump (\begin{DoxyParamCaption}\item[{const Basic\+Json\+Type \&}]{val,  }\item[{const bool}]{pretty\+\_\+print,  }\item[{const bool}]{ensure\+\_\+ascii,  }\item[{const unsigned int}]{indent\+\_\+step,  }\item[{const unsigned int}]{current\+\_\+indent = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+internal implementation of the serialization function 
+
+This function is called by the public member function dump and organizes the serialization internally. The indentation level is propagated as additional parameter. In case of arrays and objects, the function is called recursively.
+
+
+\begin{DoxyItemize}
+\item strings and object keys are escaped using {\ttfamily escape\+\_\+string()}
+\item integer numbers are converted implicitly via {\ttfamily operator$<$$<$}
+\item floating-\/point numbers are converted to a string using {\ttfamily \char`\"{}\%g\char`\"{}} format
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em val} & value to serialize \\
+\hline
+\mbox{\texttt{ in}}  & {\em pretty\+\_\+print} & whether the output shall be pretty-\/printed \\
+\hline
+\mbox{\texttt{ in}}  & {\em indent\+\_\+step} & the indent level \\
+\hline
+\mbox{\texttt{ in}}  & {\em current\+\_\+indent} & the current indent level (only used internally) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1serializer_ac1f8d1165b44149bd8be397dce68ea05}\label{classnlohmann_1_1detail_1_1serializer_ac1f8d1165b44149bd8be397dce68ea05}} 
+\index{nlohmann::detail::serializer$<$ BasicJsonType $>$@{nlohmann::detail::serializer$<$ BasicJsonType $>$}!dump\_escaped@{dump\_escaped}}
+\index{dump\_escaped@{dump\_escaped}!nlohmann::detail::serializer$<$ BasicJsonType $>$@{nlohmann::detail::serializer$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{dump\_escaped()}{dump\_escaped()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+void \mbox{\hyperlink{classnlohmann_1_1detail_1_1serializer}{nlohmann\+::detail\+::serializer}}$<$ Basic\+Json\+Type $>$\+::dump\+\_\+escaped (\begin{DoxyParamCaption}\item[{const string\+\_\+t \&}]{s,  }\item[{const bool}]{ensure\+\_\+ascii }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+dump escaped string 
+
+Escape a string by replacing certain special characters by a sequence of an escape character (backslash) and another character and other control characters by a sequence of \char`\"{}\textbackslash{}u\char`\"{} followed by a four-\/digit hex representation. The escaped string is written to output stream {\itshape o}.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em s} & the string to escape \\
+\hline
+\mbox{\texttt{ in}}  & {\em ensure\+\_\+ascii} & whether to escape non-\/\+ASCII characters with \textbackslash{}u\+XXXX sequences\\
+\hline
+\end{DoxyParams}
+@complexity Linear in the length of string {\itshape s}. \mbox{\Hypertarget{classnlohmann_1_1detail_1_1serializer_a6d652a3bfa581cf1cd7790d6d11ea52f}\label{classnlohmann_1_1detail_1_1serializer_a6d652a3bfa581cf1cd7790d6d11ea52f}} 
+\index{nlohmann::detail::serializer$<$ BasicJsonType $>$@{nlohmann::detail::serializer$<$ BasicJsonType $>$}!dump\_float@{dump\_float}}
+\index{dump\_float@{dump\_float}!nlohmann::detail::serializer$<$ BasicJsonType $>$@{nlohmann::detail::serializer$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{dump\_float()}{dump\_float()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+void \mbox{\hyperlink{classnlohmann_1_1detail_1_1serializer}{nlohmann\+::detail\+::serializer}}$<$ Basic\+Json\+Type $>$\+::dump\+\_\+float (\begin{DoxyParamCaption}\item[{number\+\_\+float\+\_\+t}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+dump a floating-\/point number 
+
+Dump a given floating-\/point number to output stream {\itshape o}. Works internally with {\itshape number\+\_\+buffer}.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em x} & floating-\/point number to dump \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1serializer_a944f6dea8dbe2961da145d2f62fa2c2f}\label{classnlohmann_1_1detail_1_1serializer_a944f6dea8dbe2961da145d2f62fa2c2f}} 
+\index{nlohmann::detail::serializer$<$ BasicJsonType $>$@{nlohmann::detail::serializer$<$ BasicJsonType $>$}!dump\_integer@{dump\_integer}}
+\index{dump\_integer@{dump\_integer}!nlohmann::detail::serializer$<$ BasicJsonType $>$@{nlohmann::detail::serializer$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{dump\_integer()}{dump\_integer()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+template$<$typename Number\+Type , detail\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+same$<$ Number\+Type, number\+\_\+unsigned\+\_\+t $>$\+::value or std\+::is\+\_\+same$<$ Number\+Type, number\+\_\+integer\+\_\+t $>$\+::value, int $>$  = 0$>$ \\
+void \mbox{\hyperlink{classnlohmann_1_1detail_1_1serializer}{nlohmann\+::detail\+::serializer}}$<$ Basic\+Json\+Type $>$\+::dump\+\_\+integer (\begin{DoxyParamCaption}\item[{Number\+Type}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+dump an integer 
+
+Dump a given integer to output stream {\itshape o}. Works internally with {\itshape number\+\_\+buffer}.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em x} & integer number (signed or unsigned) to dump \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Number\+Type} & either {\itshape number\+\_\+integer\+\_\+t} or {\itshape number\+\_\+unsigned\+\_\+t} \\
+\hline
+\end{DoxyTemplParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+json.\+hpp\end{DoxyCompactItemize}

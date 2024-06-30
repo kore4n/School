@@ -1,0 +1,18 @@
+﻿  Problem_Set_4.cpp
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Problem_Sets\Problem_Set_4\src\Problem_Set_4.cpp(10,32): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Problem_Sets\Problem_Set_4\src\Problem_Set_4.cpp(10,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Problem_Sets\Problem_Set_4\src\Problem_Set_4.cpp(10,49): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Problem_Sets\Problem_Set_4\src\Problem_Set_4.cpp(10,58): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Problem_Sets\Problem_Set_4\src\Problem_Set_4.cpp(10,70): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Problem_Sets\Problem_Set_4\src\Problem_Set_4.cpp(10,80): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Problem_Sets\Problem_Set_4\src\Problem_Set_4.cpp(10,93): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Problem_Sets\Problem_Set_4\src\Problem_Set_4.cpp(10,106): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Problem_Sets\Problem_Set_4\src\Problem_Set_4.cpp(10,115): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Problem_Sets\Problem_Set_4\src\Problem_Set_4.cpp(10,125): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Problem_Sets\Problem_Set_4\src\Problem_Set_4.cpp(10,135): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Problem_Sets\Problem_Set_4\src\Problem_Set_4.cpp(10,148): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Problem_Sets\Problem_Set_4\src\Problem_Set_4.cpp(10,157): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Problem_Sets\Problem_Set_4\src\Problem_Set_4.cpp(10,170): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Problem_Sets\Problem_Set_4\src\Problem_Set_4.cpp(10,181): warning C4305: 'initializing': truncation from 'double' to 'float'
+LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+  Problem_Set_4.vcxproj -> C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Problem_Sets\Problem_Set_4\Debug\Problem_Set_4.exe

@@ -1,0 +1,44 @@
+﻿  Assignment_4.cpp
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Assignments\Assignment_4\src\Assignment_4.cpp(64,36): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Assignments\Assignment_4\src\Assignment_4.cpp(64,36): warning C4244:         with
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Assignments\Assignment_4\src\Assignment_4.cpp(64,36): warning C4244:         [
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Assignments\Assignment_4\src\Assignment_4.cpp(64,36): warning C4244:             T=float
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Assignments\Assignment_4\src\Assignment_4.cpp(64,36): warning C4244:         ]
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Assignments\Assignment_4\src\Assignment_4.cpp(65,17): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Assignments\Assignment_4\src\Assignment_4.cpp(65,17): warning C4244:         with
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Assignments\Assignment_4\src\Assignment_4.cpp(65,17): warning C4244:         [
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Assignments\Assignment_4\src\Assignment_4.cpp(65,17): warning C4244:             T=float
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Assignments\Assignment_4\src\Assignment_4.cpp(65,17): warning C4244:         ]
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Assignments\Assignment_4\src\Assignment_4.cpp(66,36): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Assignments\Assignment_4\src\Assignment_4.cpp(66,36): warning C4244:         with
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Assignments\Assignment_4\src\Assignment_4.cpp(66,36): warning C4244:         [
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Assignments\Assignment_4\src\Assignment_4.cpp(66,36): warning C4244:             T=float
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Assignments\Assignment_4\src\Assignment_4.cpp(66,36): warning C4244:         ]
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Assignments\Assignment_4\src\Assignment_4.cpp(78,36): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Assignments\Assignment_4\src\Assignment_4.cpp(78,36): warning C4244:         with
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Assignments\Assignment_4\src\Assignment_4.cpp(78,36): warning C4244:         [
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Assignments\Assignment_4\src\Assignment_4.cpp(78,36): warning C4244:             T=float
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Assignments\Assignment_4\src\Assignment_4.cpp(78,36): warning C4244:         ]
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Assignments\Assignment_4\src\Assignment_4.cpp(79,17): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Assignments\Assignment_4\src\Assignment_4.cpp(79,17): warning C4244:         with
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Assignments\Assignment_4\src\Assignment_4.cpp(79,17): warning C4244:         [
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Assignments\Assignment_4\src\Assignment_4.cpp(79,17): warning C4244:             T=float
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Assignments\Assignment_4\src\Assignment_4.cpp(79,17): warning C4244:         ]
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Assignments\Assignment_4\src\Assignment_4.cpp(80,36): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Assignments\Assignment_4\src\Assignment_4.cpp(80,36): warning C4244:         with
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Assignments\Assignment_4\src\Assignment_4.cpp(80,36): warning C4244:         [
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Assignments\Assignment_4\src\Assignment_4.cpp(80,36): warning C4244:             T=float
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Assignments\Assignment_4\src\Assignment_4.cpp(80,36): warning C4244:         ]
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Assignments\Assignment_4\src\Assignment_4.cpp(218,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Assignments\Assignment_4\src\Assignment_4.cpp(230,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Assignments\Assignment_4\src\Assignment_4.cpp(507,13): warning C4101: 'exception': unreferenced local variable
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Assignments\Assignment_4\src\Assignment_4.cpp(563,15): warning C4244: 'initializing': conversion from 'GLfloat' to 'int', possible loss of data
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Assignments\Assignment_4\src\Assignment_4.cpp(606,55): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Assignments\Assignment_4\src\Assignment_4.cpp(608,55): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Assignments\Assignment_4\src\Assignment_4.cpp(615,55): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Assignments\Assignment_4\src\Assignment_4.cpp(617,55): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Assignments\Assignment_4\src\Assignment_4.cpp(624,23): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Assignments\Assignment_4\src\Assignment_4.cpp(627,23): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Assignments\Assignment_4\src\Assignment_4.cpp(662,37): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Assignments\Assignment_4\src\Assignment_4.cpp(662,28): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  Assignment_4.vcxproj -> C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Assignments\Assignment_4\Debug\Assignment_4.exe

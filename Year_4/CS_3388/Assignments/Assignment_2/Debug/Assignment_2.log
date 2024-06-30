@@ -1,0 +1,5 @@
+﻿  Assignment_2_Exercise_1.cpp
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Assignments\Assignment_2\src\Assignment_2_Exercise_1.cpp(50,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Assignments\Assignment_2\src\Assignment_2_Exercise_1.cpp(65,15): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Assignments\Assignment_2\src\Assignment_2_Exercise_1.cpp(102,38): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  Assignment_2.vcxproj -> C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Assignments\Assignment_2\Debug\Assignment_2.exe

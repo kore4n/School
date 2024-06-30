@@ -1,0 +1,7 @@
+Server gives server_public_key to client.
+Client uses server_public_key to encode.
+Server receives messages encoded with server_public_key. Uses server_private_key to decode.
+
+Client gives client_public key to server.
+Server uses client_public key to encode.
+Client receives messages encoded with client_public_key. Uses client_private_key to decode.

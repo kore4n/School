@@ -1,0 +1,4 @@
+<map id="nlohmann::basic_json&lt; ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer &gt;" name="nlohmann::basic_json&lt; ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer &gt;">
+<area shape="rect" id="node1" title="a class to store JSON values" alt="" coords="389,5,664,105"/>
+<area shape="rect" id="node2" href="$unionnlohmann_1_1basic__json_1_1json__value.html" title="a JSON value" alt="" coords="5,5,280,105"/>
+</map>

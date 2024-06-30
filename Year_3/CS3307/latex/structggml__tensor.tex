@@ -1,0 +1,68 @@
+\hypertarget{structggml__tensor}{}\doxysection{ggml\+\_\+tensor Struct Reference}
+\label{structggml__tensor}\index{ggml\_tensor@{ggml\_tensor}}
+
+
+Collaboration diagram for ggml\+\_\+tensor\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=200pt]{structggml__tensor__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structggml__tensor_a7930534d2c0d76949dfce3a87f01cfe9}\label{structggml__tensor_a7930534d2c0d76949dfce3a87f01cfe9}} 
+enum ggml\+\_\+type {\bfseries type}
+\item 
+\mbox{\Hypertarget{structggml__tensor_a46f7cae981539e6b0506d97ad1571fe8}\label{structggml__tensor_a46f7cae981539e6b0506d97ad1571fe8}} 
+int {\bfseries n\+\_\+dims}
+\item 
+\mbox{\Hypertarget{structggml__tensor_afd76f9ca8840b1e77f3fd1418fca24b3}\label{structggml__tensor_afd76f9ca8840b1e77f3fd1418fca24b3}} 
+int {\bfseries ne} \mbox{[}GGML\+\_\+\+MAX\+\_\+\+DIMS\mbox{]}
+\item 
+\mbox{\Hypertarget{structggml__tensor_a3c5716e4f971646b6f2fc743340038e3}\label{structggml__tensor_a3c5716e4f971646b6f2fc743340038e3}} 
+size\+\_\+t {\bfseries nb} \mbox{[}GGML\+\_\+\+MAX\+\_\+\+DIMS\mbox{]}
+\item 
+\mbox{\Hypertarget{structggml__tensor_a27100be5974e3bebfef890060c1cd648}\label{structggml__tensor_a27100be5974e3bebfef890060c1cd648}} 
+enum ggml\+\_\+op {\bfseries op}
+\item 
+\mbox{\Hypertarget{structggml__tensor_ad7cd204be0f3ca4c41e7294e9af6b2d6}\label{structggml__tensor_ad7cd204be0f3ca4c41e7294e9af6b2d6}} 
+bool {\bfseries is\+\_\+param}
+\item 
+\mbox{\Hypertarget{structggml__tensor_a8c6ac18558e5b0f0229f7e14584007b7}\label{structggml__tensor_a8c6ac18558e5b0f0229f7e14584007b7}} 
+struct \mbox{\hyperlink{structggml__tensor}{ggml\+\_\+tensor}} $\ast$ {\bfseries grad}
+\item 
+\mbox{\Hypertarget{structggml__tensor_a90f9c8ddc0c70b39ebb67bc850d98020}\label{structggml__tensor_a90f9c8ddc0c70b39ebb67bc850d98020}} 
+struct \mbox{\hyperlink{structggml__tensor}{ggml\+\_\+tensor}} $\ast$ {\bfseries src0}
+\item 
+\mbox{\Hypertarget{structggml__tensor_ad640ce32ddf2e521664b4913b0836d7a}\label{structggml__tensor_ad640ce32ddf2e521664b4913b0836d7a}} 
+struct \mbox{\hyperlink{structggml__tensor}{ggml\+\_\+tensor}} $\ast$ {\bfseries src1}
+\item 
+\mbox{\Hypertarget{structggml__tensor_a81821474375be1da30cff446da73749c}\label{structggml__tensor_a81821474375be1da30cff446da73749c}} 
+struct \mbox{\hyperlink{structggml__tensor}{ggml\+\_\+tensor}} $\ast$ {\bfseries opt} \mbox{[}GGML\+\_\+\+MAX\+\_\+\+OPT\mbox{]}
+\item 
+\mbox{\Hypertarget{structggml__tensor_a922ae93efac1c86462d5e8dde2f895c2}\label{structggml__tensor_a922ae93efac1c86462d5e8dde2f895c2}} 
+int {\bfseries n\+\_\+tasks}
+\item 
+\mbox{\Hypertarget{structggml__tensor_acca809f8371edc73d57ef783720e44ac}\label{structggml__tensor_acca809f8371edc73d57ef783720e44ac}} 
+int {\bfseries perf\+\_\+runs}
+\item 
+\mbox{\Hypertarget{structggml__tensor_a5c56d41a2340a5ef0a7da98eefbf8e57}\label{structggml__tensor_a5c56d41a2340a5ef0a7da98eefbf8e57}} 
+int64\+\_\+t {\bfseries perf\+\_\+cycles}
+\item 
+\mbox{\Hypertarget{structggml__tensor_a49f5c10b6cc42ca70cc45ed8b2121404}\label{structggml__tensor_a49f5c10b6cc42ca70cc45ed8b2121404}} 
+int64\+\_\+t {\bfseries perf\+\_\+time\+\_\+us}
+\item 
+\mbox{\Hypertarget{structggml__tensor_a2f0993a6dafaa4cbade71ad3a2d07645}\label{structggml__tensor_a2f0993a6dafaa4cbade71ad3a2d07645}} 
+void $\ast$ {\bfseries data}
+\item 
+\mbox{\Hypertarget{structggml__tensor_aa3cb8212ca646f123ac47794008ed99e}\label{structggml__tensor_aa3cb8212ca646f123ac47794008ed99e}} 
+char {\bfseries padding} \mbox{[}8\mbox{]}
+\end{DoxyCompactItemize}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+ggml.\+h\end{DoxyCompactItemize}

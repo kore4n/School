@@ -1,0 +1,43 @@
+﻿  Assignment_3.cpp
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Assignments\Assignment_3\src\Assignment_3.cpp(47,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Assignments\Assignment_3\src\Assignment_3.cpp(102,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Assignments\Assignment_3\src\Assignment_3.cpp(150,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Assignments\Assignment_3\src\Assignment_3.cpp(173,24): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Assignments\Assignment_3\src\Assignment_3.cpp(174,24): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Assignments\Assignment_3\src\Assignment_3.cpp(182,52): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Assignments\Assignment_3\src\Assignment_3.cpp(183,52): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Assignments\Assignment_3\src\Assignment_3.cpp(206,15): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Assignments\Assignment_3\src\Assignment_3.cpp(207,15): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Assignments\Assignment_3\src\Assignment_3.cpp(210,31): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Assignments\Assignment_3\src\Assignment_3.cpp(211,31): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Assignments\Assignment_3\src\Assignment_3.cpp(216,31): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Assignments\Assignment_3\src\Assignment_3.cpp(217,31): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Assignments\Assignment_3\src\Assignment_3.cpp(246,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Assignments\Assignment_3\src\Assignment_3.cpp(253,43): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Assignments\Assignment_3\src\Assignment_3.cpp(253,29): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Assignments\Assignment_3\src\Assignment_3.cpp(254,43): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Assignments\Assignment_3\src\Assignment_3.cpp(254,29): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Assignments\Assignment_3\src\Assignment_3.cpp(255,43): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Assignments\Assignment_3\src\Assignment_3.cpp(255,29): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Assignments\Assignment_3\src\Assignment_3.cpp(256,43): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Assignments\Assignment_3\src\Assignment_3.cpp(256,29): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Assignments\Assignment_3\src\Assignment_3.cpp(270,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Assignments\Assignment_3\src\Assignment_3.cpp(289,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Assignments\Assignment_3\src\Assignment_3.cpp(295,30): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Assignments\Assignment_3\src\Assignment_3.cpp(295,20): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Assignments\Assignment_3\src\Assignment_3.cpp(305,34): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Assignments\Assignment_3\src\Assignment_3.cpp(305,24): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Assignments\Assignment_3\src\Assignment_3.cpp(346,26): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Assignments\Assignment_3\src\Assignment_3.cpp(346,20): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Assignments\Assignment_3\src\Assignment_3.cpp(355,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Assignments\Assignment_3\src\Assignment_3.cpp(372,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Assignments\Assignment_3\src\Assignment_3.cpp(373,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Assignments\Assignment_3\src\Assignment_3.cpp(378,23): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Assignments\Assignment_3\src\Assignment_3.cpp(379,28): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Assignments\Assignment_3\src\Assignment_3.cpp(418,36): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Assignments\Assignment_3\src\Assignment_3.cpp(419,36): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Assignments\Assignment_3\src\Assignment_3.cpp(433,36): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Assignments\Assignment_3\src\Assignment_3.cpp(434,36): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Assignments\Assignment_3\src\Assignment_3.cpp(446,23): warning C4018: '<': signed/unsigned mismatch
+LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+  Assignment_3.vcxproj -> C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Assignments\Assignment_3\Debug\Assignment_3.exe

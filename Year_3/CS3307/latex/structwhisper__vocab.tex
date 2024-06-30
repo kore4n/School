@@ -1,0 +1,61 @@
+\hypertarget{structwhisper__vocab}{}\doxysection{whisper\+\_\+vocab Struct Reference}
+\label{structwhisper__vocab}\index{whisper\_vocab@{whisper\_vocab}}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structwhisper__vocab_a7aa20ef369f8bf99a90f9a64828be0b6}\label{structwhisper__vocab_a7aa20ef369f8bf99a90f9a64828be0b6}} 
+using {\bfseries id} = int32\+\_\+t
+\item 
+\mbox{\Hypertarget{structwhisper__vocab_ae4ea95e813b525f74011f78eebc3adab}\label{structwhisper__vocab_ae4ea95e813b525f74011f78eebc3adab}} 
+using {\bfseries token} = std\+::string
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structwhisper__vocab_af9e5f64a40c5da40386a670f56ce31d7}\label{structwhisper__vocab_af9e5f64a40c5da40386a670f56ce31d7}} 
+bool {\bfseries is\+\_\+multilingual} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structwhisper__vocab_a4bc952256eb2450700a7fdc22d02c392}\label{structwhisper__vocab_a4bc952256eb2450700a7fdc22d02c392}} 
+int {\bfseries n\+\_\+vocab} = 51864
+\item 
+\mbox{\Hypertarget{structwhisper__vocab_a445d5a35524ed65a2fd3b9b2ce09c7ef}\label{structwhisper__vocab_a445d5a35524ed65a2fd3b9b2ce09c7ef}} 
+std\+::map$<$ token, id $>$ {\bfseries token\+\_\+to\+\_\+id}
+\item 
+\mbox{\Hypertarget{structwhisper__vocab_a8030c828f83c75a9e319ad3e816b9ecc}\label{structwhisper__vocab_a8030c828f83c75a9e319ad3e816b9ecc}} 
+std\+::map$<$ id, token $>$ {\bfseries id\+\_\+to\+\_\+token}
+\item 
+\mbox{\Hypertarget{structwhisper__vocab_a55d34c7f1d1e7bf9257309061f231a78}\label{structwhisper__vocab_a55d34c7f1d1e7bf9257309061f231a78}} 
+id {\bfseries token\+\_\+eot} = 50256
+\item 
+\mbox{\Hypertarget{structwhisper__vocab_a163fb861a9fcd43923421d574e963c62}\label{structwhisper__vocab_a163fb861a9fcd43923421d574e963c62}} 
+id {\bfseries token\+\_\+sot} = 50257
+\item 
+\mbox{\Hypertarget{structwhisper__vocab_ac746dc6ded9a4331d7343e2d1abe5e83}\label{structwhisper__vocab_ac746dc6ded9a4331d7343e2d1abe5e83}} 
+id {\bfseries token\+\_\+prev} = 50360
+\item 
+\mbox{\Hypertarget{structwhisper__vocab_a2a6ef8166cd551122969f3201680209f}\label{structwhisper__vocab_a2a6ef8166cd551122969f3201680209f}} 
+id {\bfseries token\+\_\+solm} = 50361
+\item 
+\mbox{\Hypertarget{structwhisper__vocab_aeb939f1905cd08aa2f0c6317d785c0dc}\label{structwhisper__vocab_aeb939f1905cd08aa2f0c6317d785c0dc}} 
+id {\bfseries token\+\_\+not} = 50362
+\item 
+\mbox{\Hypertarget{structwhisper__vocab_ab4140aa7c5c9cbfceee9054cfa3856c2}\label{structwhisper__vocab_ab4140aa7c5c9cbfceee9054cfa3856c2}} 
+id {\bfseries token\+\_\+beg} = 50363
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structwhisper__vocab_ad442546a0b6e05738e1bd5c9269d13dc}\label{structwhisper__vocab_ad442546a0b6e05738e1bd5c9269d13dc}} 
+static const id {\bfseries token\+\_\+translate} = 50358
+\item 
+\mbox{\Hypertarget{structwhisper__vocab_a1531ee42d039ba75a74d45f462e0e494}\label{structwhisper__vocab_a1531ee42d039ba75a74d45f462e0e494}} 
+static const id {\bfseries token\+\_\+transcribe} = 50359
+\end{DoxyCompactItemize}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+whisper.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,11 @@
+﻿  main.cpp
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Examples\L11\src\main.cpp(265,15): warning C4244: 'initializing': conversion from 'GLfloat' to 'int', possible loss of data
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Examples\L11\src\main.cpp(308,55): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Examples\L11\src\main.cpp(310,55): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Examples\L11\src\main.cpp(317,55): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Examples\L11\src\main.cpp(319,55): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Examples\L11\src\main.cpp(326,23): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Examples\L11\src\main.cpp(329,23): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Examples\L11\src\main.cpp(376,37): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Examples\L11\src\main.cpp(376,28): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  L11.vcxproj -> C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Examples\L11\Debug\L11.exe

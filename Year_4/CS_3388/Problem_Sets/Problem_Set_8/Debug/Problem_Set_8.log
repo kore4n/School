@@ -1,0 +1,12 @@
+﻿  Problem_Set_8.cpp
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Problem_Sets\Problem_Set_8\src\Problem_Set_8.cpp(129,17): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Problem_Sets\Problem_Set_8\src\Problem_Set_8.cpp(132,17): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Problem_Sets\Problem_Set_8\src\Problem_Set_8.cpp(135,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Problem_Sets\Problem_Set_8\src\Problem_Set_8.cpp(138,14): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Problem_Sets\Problem_Set_8\src\Problem_Set_8.cpp(141,14): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Problem_Sets\Problem_Set_8\src\Problem_Set_8.cpp(144,16): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Problem_Sets\Problem_Set_8\src\Problem_Set_8.cpp(147,19): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Problem_Sets\Problem_Set_8\src\Problem_Set_8.cpp(150,19): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Problem_Sets\Problem_Set_8\src\Problem_Set_8.cpp(171,37): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Problem_Sets\Problem_Set_8\src\Problem_Set_8.cpp(171,28): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  Problem_Set_8.vcxproj -> C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Problem_Sets\Problem_Set_8\Debug\Problem_Set_8.exe

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34511.84
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "L10texture", "L10texture.vcxproj", "{3E39A339-7C83-4BD5-AE3F-2FE8CCFD1DDD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3E39A339-7C83-4BD5-AE3F-2FE8CCFD1DDD}.Debug|x64.ActiveCfg = Debug|x64
+		{3E39A339-7C83-4BD5-AE3F-2FE8CCFD1DDD}.Debug|x64.Build.0 = Debug|x64
+		{3E39A339-7C83-4BD5-AE3F-2FE8CCFD1DDD}.Debug|x86.ActiveCfg = Debug|Win32
+		{3E39A339-7C83-4BD5-AE3F-2FE8CCFD1DDD}.Debug|x86.Build.0 = Debug|Win32
+		{3E39A339-7C83-4BD5-AE3F-2FE8CCFD1DDD}.Release|x64.ActiveCfg = Release|x64
+		{3E39A339-7C83-4BD5-AE3F-2FE8CCFD1DDD}.Release|x64.Build.0 = Release|x64
+		{3E39A339-7C83-4BD5-AE3F-2FE8CCFD1DDD}.Release|x86.ActiveCfg = Release|Win32
+		{3E39A339-7C83-4BD5-AE3F-2FE8CCFD1DDD}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5A437477-E984-4815-86E7-9A2EE30396FC}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,9 @@
+<map id="whisper_decoder" name="whisper_decoder">
+<area shape="rect" id="node1" title=" " alt="" coords="168,335,300,361"/>
+<area shape="rect" id="node2" href="$structwhisper__kv__cache.html" title=" " alt="" coords="79,245,221,272"/>
+<area shape="rect" id="node3" href="$structggml__tensor.html" title=" " alt="" coords="5,125,108,152"/>
+<area shape="rect" id="node4" href="$structggml__context.html" title=" " alt="" coords="189,125,300,152"/>
+<area shape="rect" id="node5" href="$structggml__scratch.html" title=" " alt="" coords="129,5,238,32"/>
+<area shape="rect" id="node6" href="$structggml__object.html" title=" " alt="" coords="263,5,365,32"/>
+<area shape="rect" id="node7" href="$structwhisper__sequence.html" title=" " alt="" coords="245,245,388,272"/>
+</map>

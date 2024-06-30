@@ -1,0 +1,12 @@
+﻿  Problem_Set_6_Exercise_4.cpp
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Problem_Sets\Problem_Set_6_Exercise_4\src\Problem_Set_6_Exercise_4.cpp(231,15): warning C4244: 'initializing': conversion from 'GLfloat' to 'int', possible loss of data
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Problem_Sets\Problem_Set_6_Exercise_4\src\Problem_Set_6_Exercise_4.cpp(274,55): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Problem_Sets\Problem_Set_6_Exercise_4\src\Problem_Set_6_Exercise_4.cpp(276,55): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Problem_Sets\Problem_Set_6_Exercise_4\src\Problem_Set_6_Exercise_4.cpp(283,55): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Problem_Sets\Problem_Set_6_Exercise_4\src\Problem_Set_6_Exercise_4.cpp(285,55): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Problem_Sets\Problem_Set_6_Exercise_4\src\Problem_Set_6_Exercise_4.cpp(292,23): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Problem_Sets\Problem_Set_6_Exercise_4\src\Problem_Set_6_Exercise_4.cpp(295,23): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Problem_Sets\Problem_Set_6_Exercise_4\src\Problem_Set_6_Exercise_4.cpp(342,37): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Problem_Sets\Problem_Set_6_Exercise_4\src\Problem_Set_6_Exercise_4.cpp(342,28): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+  Problem_Set_6_Exercise_4.vcxproj -> C:\Users\ssoni\Desktop\CSProjects\School\Year_4\CS_3388\Problem_Sets\Problem_Set_6_Exercise_4\Debug\Problem_Set_6_Exercise_4.exe
